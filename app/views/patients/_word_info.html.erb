@@ -1,0 +1,63 @@
+<div class="word-header">
+  <div class="left-header">
+    <div class="header-title">
+    3階病棟マップ
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%# <% if user_signed_in? %> %>
+        <%# <%= link_to "新規入院", new_patient_karte_path, class: "header-button" %> %>
+      <%# <% else %> %>
+        <%# <%= link_to "新規入院", new_session_path(resource_name), class: "header-button" %> %>
+      <%# <% end %> %>
+    </div>
+  </div>
+</div>
+
+<%# <病室一覧> %>
+<div class="word-patients">
+  <div class="left-patients">
+    <div class="room">
+      <div class="more">
+        <a href="#">301</a>
+        <%# <病室内患者様一覧> %>
+        <ul class="more_list">
+        <%# <% @patients.each do |patient| %> %>
+          <li>
+          <%# <%= link_to karte_path(patient.id) do %> %>
+            <%# <%= patient.patient_name %> %>
+          <%# <% end %> %>
+          </li>
+          <%# <% end  %> %>
+          <li>
+            <%= link_to '太田聡介 74歳 肺炎 既：胃癌手術' %>
+          </li>
+          <li>
+            <%= link_to '石川直幸 81歳 肺炎 既：くも膜下出血' %>
+          </li>
+          <li>
+            <%= link_to '小林翔太 77歳 肺炎 既：COPD' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="right-patients">
+    <div class="room">
+      <div class="more">
+        <a href="#">303</a>
+        <ul class="more_list">
+          <li>
+            <%= link_to '山本花子 72歳 主：肺炎 既：リウマチ' %>
+          </li>
+          <li>
+            <%= link_to '岡田順子 85歳 主：肺炎 既：心不全' %>
+          </li>
+          <li>
+            <%= link_to '加藤優子 78歳 主：肺炎 既：右大腿骨骨折' %>
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>
