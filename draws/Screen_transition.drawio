@@ -1,0 +1,201 @@
+<mxfile host="f68de6bf-d336-42cc-9edd-8a53fe8740bb" modified="2020-09-03T06:26:13.004Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.48.2 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="SuSLdO6cYW1cwuZ9IpXT" version="13.1.3">
+    <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
+        <mxGraphModel dx="591" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="137" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;labelBackgroundColor=#FFCCE6;fillColor=#FFCCCC;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="984.38" y="370" width="138.75" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;shadow=1;glass=0;comic=0;gradientColor=none;dx=60;dy=40;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="950" width="490" height="670" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="shape=internalStorage;whiteSpace=wrap;html=1;backgroundOutline=1;shadow=0;glass=0;comic=0;gradientColor=none;dx=140;dy=100;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="510" width="630" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="LOGIN" style="shape=actor;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="210" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="email" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="190" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(248, 249, 250); text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;PASSWORD&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="230" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="NEW" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="270" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="shape=actor;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="743" y="50" width="200" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="email" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="205" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;span&gt;PASSWORD&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="793.25" y="240" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="NICKNAME" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="270" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="NEW USER" style="ellipse;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="793.25" y="80" width="99.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;301&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="448.88" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;302&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="525" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;303&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;305&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;306&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;307&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;308&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 1&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 2&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 3&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;Pt 4&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="630" width="50" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;div&gt;&lt;span&gt;new_patient_adm&lt;/span&gt;&lt;/div&gt;" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="530" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="User_to_do_list" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="650" width="110" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="WORD_INFO" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="526" y="530" width="270" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.46;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28" target="61" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="430" as="sourcePoint"/>
+                        <mxPoint x="230" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.673;entryY=-0.013;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="32" target="61" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="370" y="460" as="sourcePoint"/>
+                        <mxPoint x="470" y="517" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="6" target="39" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="370" y="430" as="sourcePoint"/>
+                        <mxPoint x="420" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" value="if new user resistration!" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="130" width="135" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="succesfully login!" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;size=40;position=0.29;position2=0.29;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="310" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="&lt;span&gt;succesfully&amp;nbsp;&lt;/span&gt;resistration&lt;span&gt;! &amp;amp;&amp;amp; login!&lt;/span&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;position2=0.67;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="390" width="195" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="25" y="410" width="200" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="&lt;table width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; background-color: rgb(204 , 229 , 255) ; border: 1px solid rgb(0 , 0 , 204) ; border-collapse: collapse&quot; border=&quot;1&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;color: rgb(255 , 255 , 255)&quot;&gt;&lt;th align=&quot;left&quot;&gt;NEW PATIENT&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;karte_id&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;patient_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;birth_date&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;image&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;border-collapse: collapse&quot;&gt;tel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;post_num&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;prefecture_id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;city&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;house_num&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;apart_name&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;key_person&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;kp_tel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;main_disease&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sub_disease&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;main_doctor&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;fillColor=none;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="460" width="110" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="59" target="75" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="85" y="620" as="sourcePoint"/>
+                        <mxPoint x="40" y="920" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="150" y="560"/>
+                            <mxPoint x="40" y="920"/>
+                            <mxPoint x="40" y="920"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="82" value="create new patient" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;size=20;position=0.64;position2=0.67;base=20;direction=east;flipH=0;flipV=0;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="510" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="678.13" y="870" width="445" height="750" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="pt_karte" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="715" y="890" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="basic_info" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="815" y="890" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="vital_signs_line_graph" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="715" y="940" width="395" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;time&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Title 2&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;Title 3&lt;/th&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;KT&lt;/td&gt;&lt;td&gt;Value 2&lt;/td&gt;&lt;td&gt;Value 3&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;P&lt;/td&gt;&lt;td&gt;Value 5&lt;/td&gt;&lt;td&gt;Value 6&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;R&lt;/td&gt;&lt;td&gt;Value 8&lt;/td&gt;&lt;td&gt;Value 9&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;b&gt;BP&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Value 11&lt;/td&gt;&lt;td&gt;Value 12&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;SPO2&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;food_intake&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;water_intake&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;excresion&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;lung_sound&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;atten_sound&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sputum&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;cough&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;sleep&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;shadow=0;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="715" y="1140" width="367.25" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="period" style="shape=delay;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="715" y="1090" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="" style="endArrow=classic;html=1;entryX=0.452;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="58" target="84" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="601" y="800" as="sourcePoint"/>
+                        <mxPoint x="460" y="830" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="95" value="show the patients karte" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;size=26;position=0.43;direction=south;position2=0.33;base=8;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="827" width="181.75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="entlassen" style="shape=switch;whiteSpace=wrap;html=1;shadow=0;glass=0;comic=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="1560" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="&lt;ul&gt;&lt;li&gt;&lt;span&gt;pt1(assist_medicine)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;pt2(insuline_injection)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;pt3(antribiontic_drip)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;pt4(take_exam_room)&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="1010" width="190" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" value="&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;username_to_do_list&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="960" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="10:00" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="1050" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="14:00" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="1310" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="&lt;ul&gt;&lt;li&gt;pt7(antribiontic_drip)&lt;/li&gt;&lt;li&gt;pt5(take_reha_room)&lt;/li&gt;&lt;li&gt;pt6(antribiontic_drip)&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="185" y="1280" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="*箇条書きマークがチェックボックスになっている。時系列で並べられている。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;comic=0;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="1100" width="305" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.515;entryY=-0.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="41" target="111" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="430" y="910" as="sourcePoint"/>
+                        <mxPoint x="470" y="860" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="128" value="show the&amp;nbsp;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;user to do list&lt;/span&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;shadow=0;glass=0;comic=0;gradientColor=none;size=26;position=0.43;direction=south;position2=0.33;base=8;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="857" width="181.75" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="treatments" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="890" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="blood tests" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoCube;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="715" y="1550" width="45" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="X-ray" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="1555" width="15" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;color: rgb(255 , 255 , 255) ; border: 1px solid rgb(152 , 191 , 33)&quot;&gt;&lt;th align=&quot;left&quot;&gt;&lt;span style=&quot;&quot;&gt;time&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;span style=&quot;&quot;&gt;test&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid rgb(152 , 191 , 33)&quot;&gt;&lt;td&gt;&lt;span style=&quot;&quot;&gt;medicine&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;span style=&quot;&quot;&gt;patient_id&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;overflow=fill;rounded=0;fillColor=#FFCCCC;labelBackgroundColor=#FFCCE6;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="1007.5" y="420" width="92.5" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="create&lt;br&gt;edit&lt;br&gt;show" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;labelBackgroundColor=#FFFFFF;fillColor=#FFFFFF;gradientColor=none;direction=north;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="660" width="80" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="143" value="" style="endArrow=classic;html=1;exitX=0.64;exitY=-0.033;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="129" target="137" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="730" y="1220" as="sourcePoint"/>
+                        <mxPoint x="780" y="1170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
