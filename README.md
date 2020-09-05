@@ -130,7 +130,7 @@ PASS:0416
 | p_num         | integer    | null: false |
 | image         | text       | null: false |
 | name          | string     | null: false |
-| birth_date       | text       | default: "" |
+| birth_date       | datetime       | default: "" |
 | tel          | string | default: "" |
 | post_num      | string    | default: "" |
 | prefecture_id   | integer    | default: "" |

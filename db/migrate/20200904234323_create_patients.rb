@@ -3,7 +3,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
     create_table :patients do |t|
       t.integer :p_num,      null: false
       t.string  :name,      null: false
-      t.text    :birth_date
+      t.datetime    :birth_date
       t.string     :tel,   default: ""
       t.string     :post_num,   default: ""
       t.integer    :prefecture_id,                null: false

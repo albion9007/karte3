@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_013358) do
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "p_num", null: false
     t.string "name", null: false
-    t.text "birth_date"
+    t.datetime "birth_date"
     t.string "tel", default: ""
     t.string "post_num", default: ""
     t.integer "prefecture_id", null: false

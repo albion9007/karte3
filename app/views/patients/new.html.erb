@@ -38,7 +38,7 @@
         患者様の名前
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"ipatient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_area :name, class:"items-text", id:"patient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
     </div>
 
 
@@ -77,7 +77,7 @@
         <div class='form-text-wrap'>
           <label class="form-text">都道府県</label>
         </div>
-        <%# <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"patient-prefecture"}) %> %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"patient-prefecture"}) %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>

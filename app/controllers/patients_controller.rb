@@ -7,6 +7,17 @@ class PatientsController < ApplicationController
   def index
   end
 
+  def create
+    @patient = Patient.new(patient_params)
+    # binding.pry
+    # @patient.valid?
+    if @patient.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def patient_params
