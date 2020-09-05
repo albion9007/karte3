@@ -3,7 +3,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">新規入院患者様の情報を入力して下さい</h2>
-    <%= form_with model: @karte, local: true do |f| %>
+    <%= form_with model: @patient, local: true do |f| %>
     <%# <%= form_with model: @karte, url: user_registration_path, class: 'registration-main', local: true do |f| %> %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
@@ -23,7 +23,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"karte-image" %>
+        <%= f.file_field :image, id:"patient-image" %>
       </div>
     </div>
     <%# /Pt.画像 %>
@@ -33,12 +33,12 @@
         患者様のID番号
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :karte_id, class:"items-text", id:"item-name", placeholder:"患者様のID番号（必須 4桁の数字)", maxlength:"4" %>
+      <%= f.text_area :p_num, class:"items-text", id:"p-num", placeholder:"患者様のID番号（必須 4桁の数字)", maxlength:"4" %>
       <div class="weight-bold-text">
         患者様の名前
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :patient_name, class:"items-text", id:"item-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_area :name, class:"items-text", id:"ipatient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
     </div>
 
 
@@ -71,13 +71,13 @@
         <div class='form-text-wrap'>
           <label class="form-text">郵便番号</label>
         </div>
-        <%= f.text_field 'post_num', class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        <%= f.text_field 'post_num', class:"input-default", id:"post-num", placeholder:"例）123-4567", maxlength:"8" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">都道府県</label>
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"karte_prefecture"}) %>
+        <%# <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"patient-prefecture"}) %> %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
@@ -89,19 +89,19 @@
         <div class='form-text-wrap'>
           <label class="form-text">番地</label>
         </div>
-        <%= f.text_field 'house_num', class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
+        <%= f.text_field 'house_num', class:"input-default", id:"house-num", placeholder:"例）青山1-1-1"%>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">建物名</label>
         </div>
-        <%= f.text_field 'apart_name', class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
+        <%= f.text_field 'apart_name', class:"input-default", id:"apart-name", placeholder:"例）柳ビル103"%>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">電話番号</label>
         </div>
-        <%= f.text_field 'tel', class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
+        <%= f.text_field 'tel', class:"input-default", id:"tel", placeholder:"例）09012345678",maxlength:"11"%>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
