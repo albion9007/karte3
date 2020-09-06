@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_013358) do
+ActiveRecord::Schema.define(version: 2020_09_06_102344) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,30 @@ ActiveRecord::Schema.define(version: 2020_09_05_013358) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "observations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.decimal "temperature", precision: 10
+    t.integer "pulse"
+    t.integer "respiration"
+    t.integer "high_blood_pressure"
+    t.integer "low_blood_pressure"
+    t.integer "spo2"
+    t.string "food_intake"
+    t.string "water_intake"
+    t.integer "excresion_id"
+    t.integer "ex_amount_id"
+    t.integer "atten_sound_id"
+    t.integer "lung_sound_id"
+    t.integer "sputum_id"
+    t.integer "cough_id"
+    t.string "sleep"
+    t.bigint "user_id"
+    t.bigint "patient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_observations_on_patient_id"
+    t.index ["user_id"], name: "index_observations_on_user_id"
+  end
+
   create_table "patient_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "patient_id"
     t.bigint "user_id"
@@ -43,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_09_05_013358) do
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "p_num", null: false
+    t.string "p_num", null: false
     t.string "name", null: false
     t.datetime "birth_date"
     t.string "tel", default: ""
@@ -77,6 +101,8 @@ ActiveRecord::Schema.define(version: 2020_09_05_013358) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "observations", "patients"
+  add_foreign_key "observations", "users"
   add_foreign_key "patient_users", "patients"
   add_foreign_key "patient_users", "users"
   add_foreign_key "patients", "users"
