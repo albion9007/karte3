@@ -130,7 +130,7 @@ PASS:0416
 | p_num         | integer    | null: false |
 | image         | text       | null: false |
 | name          | string     | null: false |
-| birth_date       | text       | default: "" |
+| birth_date       | datetime       | default: "" |
 | tel          | string | default: "" |
 | post_num      | string    | default: "" |
 | prefecture_id   | integer    | default: "" |
@@ -147,7 +147,8 @@ PASS:0416
 ### Association
 - has_many :patient_users
 - has_many :users, through: :patient_users
-- belongs_to :to do lists
+- belongs_to_active_hash :prefecture
+- belongs_to :to_do_lists
 - has_many :treatments
 - has_one :monitors
 - has_one_attached :image
@@ -183,7 +184,7 @@ PASS:0416
 | sputum         | integer    |
 | cough         | integer    |
 | sleep         | integer    |
-
+| time         | string    | null: false |
 ### Association
 - belongs_to :patients
 

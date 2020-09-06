@@ -1,0 +1,173 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">新規入院患者様の情報を入力して下さい</h2>
+    <%= form_with model: @patient, local: true do |f| %>
+    <%# <%= form_with model: @karte, url: user_registration_path, class: 'registration-main', local: true do |f| %> %>
+
+    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%# <%= render 'shared/error_messages', model: f.object %> %>
+    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+    <%# Pt.画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        患者様の顔写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"patient-image" %>
+      </div>
+    </div>
+    <%# /Pt.画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        患者様のID番号
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :p_num, class:"items-text", id:"p-num", placeholder:"患者様のID番号（必須 4桁の数字)", maxlength:"4" %>
+      <div class="weight-bold-text">
+        患者様の名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :name, class:"items-text", id:"patient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
+    </div>
+
+
+      <div class="form-group">
+      <div class='form-text-wrap'>
+      <label class="form-text">患者様の生年月日</label>
+      </div>
+      <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birth_date,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+
+
+
+  <%# 患者様の住所入力 %>
+    <div class='shipping-address-form'>
+      <h1 class='info-input-haedline'>
+        患者様の住所
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">郵便番号</label>
+        </div>
+        <%= f.text_field 'post_num', class:"input-default", id:"post-num", placeholder:"例）123-4567", maxlength:"8" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"patient-prefecture"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">市区町村</label>
+        </div>
+        <%= f.text_field 'city', class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">番地</label>
+        </div>
+        <%= f.text_field 'house_num', class:"input-default", id:"house-num", placeholder:"例）青山1-1-1"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">建物名</label>
+        </div>
+        <%= f.text_field 'apart_name', class:"input-default", id:"apart-name", placeholder:"例）柳ビル103"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号</label>
+        </div>
+        <%= f.text_field 'tel', class:"input-default", id:"tel", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">キーパーソン</label>
+        </div>
+        <%= f.text_field 'key_person', class:"input-default", id:"key-person", placeholder:"例）娘",maxlength:"10"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">キーパーソンの連絡先</label>
+        </div>
+        <%= f.text_field 'kp_tel', class:"input-default", id:"kp-tel", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">主病名</label>
+        </div>
+        <%= f.text_field 'main_disease', class:"input-default", id:"main-disease", placeholder:"例）誤嚥性肺炎",maxlength:"15"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">既往歴</label>
+        </div>
+        <%= f.text_field 'sub_disease', class:"input-default", id:"sub-disease", placeholder:"例）糖尿病",maxlength:"15"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">主治医</label>
+        </div>
+        <%= f.text_field 'main_doctor', class:"input-default", id:"main-doctor", placeholder:"例）Dr.藤井勝",maxlength:"15"%>
+      </div>
+    </div>
+    <%# <% end %> %>
+
+    <%# 注意書き %>
+    <div class="caution">
+      <p class="sentence">
+        患者様の名前が不明の場合は
+        <a>「不明男性」</a>
+        や
+        <a>「不明女性」</a>
+        と入力して下さい。
+      </p>
+      <p class="sentence">
+        生年月日が不明の場合は名前のところに
+        <a>「名前（60代）」</a>
+        と入力して下さい。
+      </p>
+      <p class="sentence">
+        <a>「キーパーソン」</a>
+        と、
+        <a>「その連絡先」</a>
+        はなるべく入力して下さい。
+      </p>
+    </div>
+    <%# /注意書き %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "患者様情報を登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+  </div>
+  <footer class="items-sell-footer">
+  </footer>
+</div>

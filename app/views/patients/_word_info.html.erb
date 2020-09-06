@@ -6,11 +6,11 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <%# <% if user_signed_in? %> %>
-        <%# <%= link_to "新規入院", new_patient_karte_path, class: "header-button" %> %>
-      <%# <% else %> %>
-        <%# <%= link_to "新規入院", new_session_path(resource_name), class: "header-button" %> %>
-      <%# <% end %> %>
+      <% if user_signed_in? %>
+        <%= link_to "新規入院", new_patient_path, class: "header-button" %>
+      <% else %>
+        <%= link_to "新規入院", new_session_path(resource_name), class: "header-button" %>
+      <% end %>
     </div>
   </div>
 </div>
