@@ -1,5 +1,4 @@
 class Patient < ApplicationRecord
-
   has_many :patient_users
   has_many :users, through: :patient_users
   # belongs_to :to_do_lists
@@ -18,5 +17,4 @@ class Patient < ApplicationRecord
     validates :main_disease
     validates :main_doctor
   end
-
 end
