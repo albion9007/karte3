@@ -21,15 +21,25 @@
     <div class="room">
       <div class="more">
         <a href="#">301</a>
+        <%# <select>
+        <%# <option value="">301</option> %>
+        <%# <% Patient.all.each do |patient| %> 
+        <%# <option><%= patient.name</option> %> 
+        <%# <% end %> 
+        <%# </select> %> 
         <%# <病室内患者様一覧> %>
         <ul class="more_list">
-        <%# <% @patients.each do |patient| %> %>
+        <% @patients.each do |patient| %>
+          <%= link_to "#" do %>
           <li>
-          <%# <%= link_to karte_path(patient.id) do %> %>
-            <%# <%= patient.patient_name %> %>
-          <%# <% end %> %>
+          <%= image_tag patient.image, class:"patient-img"%>
+          <%= patient.name %>
+          <%= patient.main_disease %>
+          <%= patient.sub_disease %>
+          <%= patient.main_doctor %>
           </li>
-          <%# <% end  %> %>
+          <% end  %>
+          <% end %>
           <li>
             <%= link_to '太田聡介 74歳 肺炎 既：胃癌手術' %>
           </li>

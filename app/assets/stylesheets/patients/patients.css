@@ -41,6 +41,13 @@
   overflow: scroll;
 }
 
+.patient-img {
+  /* margin-right: 20px; */
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+}
+
 .list {
   padding: 20px 0 40px;
 }
