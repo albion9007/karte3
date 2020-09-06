@@ -33,12 +33,12 @@
         患者様のID番号
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :p_num, class:"items-text", id:"p-num", placeholder:"患者様のID番号（必須 4桁の数字)", maxlength:"4" %>
+      <%= f.text_field :p_num, class:"items-text", id:"p-num", placeholder:"患者様のID番号（必須 4桁の数字)", maxlength:"4" %>
       <div class="weight-bold-text">
         患者様の名前
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"patient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
+      <%= f.text_field :name, class:"items-text", id:"patient-name", placeholder:"患者様の名前（必須 20文字まで)", maxlength:"20" %>
     </div>
 
 

@@ -4,13 +4,10 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
-  def index
-  end
-
+  # def index
+  # end
   def create
     @patient = Patient.new(patient_params)
-    # binding.pry
-    # @patient.valid?
     if @patient.save
       redirect_to root_path
     else

@@ -184,7 +184,7 @@ PASS:0416
 | sputum         | integer    |
 | cough         | integer    |
 | sleep         | integer    |
-
+| time         | string    | null: false |
 ### Association
 - belongs_to :patients
 
