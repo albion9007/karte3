@@ -52,10 +52,20 @@
 
 .item-red-btn {
   text-align: center;
-  background-color: #ea352d;
+  background-color: #75ddd4;
   font-size: 24px;
   font-weight: bold;
-  color: #FFF;
+  color: rgb(26, 11, 93);
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.patient-edit-btn {
+  text-align: center;
+  background-color: #f09d31c0;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(11, 3, 32);
   margin: 20px 0px;
   padding: 2vh 10vw;
 }
@@ -108,8 +118,8 @@
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
+  color: rgb(197, 33, 28);
+  border: 2px solid #da2929;
   display: flex;
   justify-content: center;
   align-items: center;
