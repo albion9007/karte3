@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_06_102344) do
+ActiveRecord::Schema.define(version: 2020_09_07_130334) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 2020_09_06_102344) do
     t.integer "spo2"
     t.string "food_intake"
     t.string "water_intake"
-    t.integer "excresion_id"
-    t.integer "ex_amount_id"
-    t.integer "atten_sound_id"
-    t.integer "lung_sound_id"
-    t.integer "sputum_id"
-    t.integer "cough_id"
+    t.string "excresion"
+    t.string "ex_amount"
+    t.string "atten_sound"
+    t.string "atten_part"
+    t.string "sputum"
+    t.string "cough"
     t.string "sleep"
     t.bigint "user_id"
     t.bigint "patient_id"
