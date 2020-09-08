@@ -21,7 +21,7 @@
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
     <% if user_signed_in? %>
     <%= link_to '(新規入院患者様)観察記録を作成する', new_patient_observation_path(@patient.id),class:"item-red-btn"%>
-    <%= link_to '観察記録を入力する', edit_patient_observation_path(@patient.id),class:"item-red-btn"%>
+    <%= link_to '観察記録を入力する', patient_observation_path(@patient.id),class:"item-red-btn"%>
     <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "patient-edit-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '退院', patient_path, method: :delete, class:'item-destroy' %>

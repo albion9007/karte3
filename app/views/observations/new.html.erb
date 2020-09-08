@@ -36,6 +36,7 @@
     <div class="item-explain-box">
       <%# <span><%= @item.item_explain %></span> %>
     </div>
+    <%= form_with model: @observation, url: patient_observations_path(@patient.id), method: :post, local: true do |f| %>
     <table class="detail-table">
       <tbody>
   <tr>
@@ -57,151 +58,119 @@
   <tr>
     <th>体温</th>
     <td>
-    <input type=text name="temperature">
+    <%= f.text_field :temperature, maxlength: "4" %>
+    <%# <input type=text name="temperature"> %>
     </td>
   </tr>
   <tr>
     <th>脈拍数/分</th>
     <td>
-    <input type=text name="pulse">
+    <%= f.text_field :pulse, maxlength: "3" %>
+    <%# <input type=text name="pulse"> %>
     </td>
   </tr>
   <tr>
     <th>呼吸数/分</th>
     <td>
-    <input type=text name="respiration">
+    <%= f.text_field :respiration, maxlength: "2" %>
+    <%# <input type=text name="respiration"> %>
     </td>
   </tr>
   <tr>
     <th>最高血圧</th>
     <td>
-    <input type=text name="high_blood_pressure">
+    <%= f.text_field :high_blood_pressure, maxlength: "3" %>
+    <%# <input type=text name="high_blood_pressure"> %>
     </td>
   </tr>
   <tr>
     <th>最低血圧</th>
     <td>
-    <input type=text name="low_blood_pressure">
+    <%= f.text_field :low_blood_pressure, maxlength: "3" %>
+    <%# <input type=text name="low_blood_pressure"> %>
     </td>
   </tr>
   <tr>
     <th>SPO2</th>
     <td>
-    <input type=text name="spo2">
+    <%= f.text_field :spo2, maxlength: "3" %>%
+    <%# <input type=text name="spo2"> %>
     </td>
   </tr>
   <tr>
     <th>食事摂取量</th>
     <td>
-    <input type=text name="food_intake">
+    <%= f.text_field :food_intake, maxlength: "8" %>
+    <%# <input type=text name="food_intake"> %>
     </td>
   </tr>
   <tr>
     <th>水分摂取量</th>
     <td>
-    <input type=text name="water_intake">
+    <%= f.text_field :water_intake, maxlength: "8" %>
     </td>
   </tr>
   <tr>
     <th>便の性状</th>
-    <td><select name="excresion">
-    <option value=""></option>
-    <option value="コロコロ便">コロコロ便</option>
-    <option value="硬い便">硬い便</option>
-    <option value="やや硬い便">やや硬い便</option>
-    <option value="普通便">普通便</option>
-    <option value="やや柔らかい便">やや柔らかい便</option>
-    <option value="泥状便">泥状便</option>
-    <option value="水様便">水様便</option>
-    <option value="黒色便">黒色便</option>
-    <option value="暗赤色便">暗赤色便</option>
-    <option value="血便">血便</option>
-    <option value="血液付着便">血液付着便</option>
-    </select></td>
+    <td><%= f.select :excresion, {'': 1, 'コロコロ便': 2, '硬い便': 3,
+    'やや硬い便': 4, '普通便': 5, 'やや柔らかい便': 6, '泥状便': 7, '水様便': 8,
+    '黒色便': 9, '暗赤色便': 10, '血便': 11, '血液付着便': 12 } %>
+    </td>
   </tr>
   <tr>
     <th>便の量</th>
-    <td><select name="ex_amount">
-    <option value=""></option>
-    <option value="無し">無し</option>
-    <option value="うずらの卵">うずらの卵</option>
-    <option value="鶏卵">鶏卵</option>
-    <option value="バナナ1本">バナナ1本</option>
-    <option value="バナナ2本">バナナ2本</option>
-    <option value="コップ1杯">コップ1杯</option>
-    <option value="コップ2杯以上">コップ2杯以上</option>
-    </select></td>
+    <td><%= f.select :ex_amount, {'': 1, '無し': 2, 'うずらの卵': 3,
+    '鶏卵': 4, 'バナナ1本': 5, 'バナナ2本': 6, 'コップ1杯': 7, 'コップ2杯以上': 8 } %>
+    </td>
   </tr>
   <tr>
-    <th>排尿量</th>
+    <th>排尿状況</th>
     <td>
-    <input type=text name="water_intake">
     </td>
   </tr>
   <tr>
     <th>呼吸の副雑音</th>
-    <td><select name="atten_sound">
-    <option value=""></option>
-    <option value="無し">無し</option>
-    <option value="wheeze">ヒューヒュー</option>
-    <option value="rhonchi">グーグー</option>
-    <option value="fine_crackle">パチパチ</option>
-    <option value="coarse_crackles">ブツブツ</option>
-    <option value="胸膜摩擦音">ギューギュー、バリバリ</option>
-    </select></td>
+    <td><%= f.select :atten_sound, {'': 1, '無し': 2, 'ヒューヒュー': 3,
+    'グーグー': 4, 'パチパチ': 5, 'ブツブツ': 6, 'ギュー、バリ': 7 } %>
+    </td>
   </tr>
   <tr>
-    <th>複雑音の部位</th>
-    <td><select name="atten_part">
-    <option value=""></option>
-    <option value="右上葉">右上葉</option>
-    <option value="左上葉">左上葉</option>
-    <option value="右下葉">右下葉</option>
-    <option value="左下葉">左下葉</option>
-    <option value="両上葉">両上葉</option>
-    <option value="両下葉">両下葉</option>
-    <option value="背部上葉">背部上葉</option>
-    <option value="背部下葉">背部下葉</option>
-    <option value="全体">全体</option>
-    <option value="気管支">気管支</option>
-    </select></td>
+    <th>副雑音の部位</th>
+    <td><%= f.select :atten_part, {'': 1, '右上葉': 2, '左上葉': 3,
+    '右下葉': 4, '左下葉': 5, '両上葉': 6, '両下葉': 7, '背部右上葉': 8, '背部左上葉': 9,
+    '背部両上葉': 10, '背部右下葉': 11, '背部左下葉': 12, '両下葉': 13, '全体': 14 } %>
+    </td>
   </tr>
   <tr>
     <th>痰の性状</th>
-    <td><select name="sputum">
-    <option value=""></option>
-    <option value="無し">無し</option>
-    <option value="黄色">黄色</option>
-    <option value="緑色">緑色</option>
-    <option value="錆びた色">錆びた色</option>
-    <option value="白色・粘度が高い">白色・粘度が高い</option>
-    <option value="ピンク・泡状">ピンク・泡状</option>
-    <option value="白色、サラサラ">白色、サラサラ</option>
-    <option value="暗赤色">暗赤色</option>
-    <option value="赤色">赤色</option>
-    </select></td>
+    <td><%= f.select :sputum, {'': 1, '無し': 2, '黄色': 3,
+    '緑色': 4, '錆びた色': 5, '白色・粘度が高い': 6, 'ピンク・泡状': 7, '白色、サラサラ': 8, '暗赤色': 9,
+    '赤色': 10 } %>
+    </td>
   </tr>
   <tr>
     <th>咳の性状</th>
-    <td><select name="cough">
-    <option value=""></option>
-    <option value="無し">無し</option>
-    <option value="痰絡みの咳">痰絡みの咳</option>
-    <option value="乾いた咳">乾いた咳</option>
-    </select></td>
+    <td><%= f.select :cough, {'': 1, '無し': 2, '痰絡みの咳': 3,
+    '乾いた咳': 4 } %>
+    </td>
   </tr>
   <tr>
     <th>睡眠状況</th>
     <td>
-    <input type=text name="pulse">
+    <%= f.text_field :sleep, maxlength: "8" %>
     </td>
   </tr>
   <tr>
     <th>記録者名</th>
     <td></td>
   </tr>
+  <tr>
+    <th>観察記録保存</th>
+    <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
+  </tr>
       </tbody>
     </table>
+    <% end %>
 
     <div class="option">
       <div class="favorite-btn">

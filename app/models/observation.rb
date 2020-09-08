@@ -1,3 +1,3 @@
 class Observation < ApplicationRecord
-  belongs_to :patients
+  belongs_to :patients, optional: true
 end

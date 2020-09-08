@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "patients#index"
   resources :users, only: [:edit, :update]
   resources :patients, only: [:new, :create, :index, :show, :edit] do
-    resources :observations, only: [:new, :create, :index, :edit]
+    resources :observations, only: [:new, :create, :index, :edit, :show]
   end
 end
