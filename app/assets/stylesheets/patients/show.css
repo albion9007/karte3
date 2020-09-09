@@ -110,16 +110,18 @@
 
 .option {
   display: flex;
-  justify-content: space-between;
+  justify-content:  space-around;
   position: relative;
 }
 
 .favorite-btn {
   border-radius: 40px;
-  width: 15vw;
+  width: 30vw;
+  height: 10vh;
+  font-size: 30px;
   min-width: 200px;
-  color: rgb(197, 33, 28);
-  border: 2px solid #da2929;
+  color: rgb(26, 2, 24);
+  border: 5px solid #eb208c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,12 +134,12 @@
 
 .report-btn {
   border-radius: 40px;
-  width: 15vw;
+  width: 30vw;
   min-width: 200px;
-
+  font-size: 30px;
   padding: 1vh 0;
   color: black;
-  border: 2px solid #2d2d2d;
+  border: 5px solid #0c08ce;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,7 +148,6 @@
 .report-flag-icon {
   margin-right: 5px;
 }
-
 
 /* /商品の概要 */
 

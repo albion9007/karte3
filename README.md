@@ -150,7 +150,7 @@ PASS:0416
 - belongs_to_active_hash :prefecture
 - belongs_to :to_do_lists
 - has_many :treatments
-- has_one :observations
+- has_many :observations
 - has_one_attached :image
 
 ## patient_users テーブル

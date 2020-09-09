@@ -1,210 +1,329 @@
-
-<%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
-      <%# <%= @item.item_name %> %>
-    </h2>
-    <div class='item-img-content'>
-      <%# <%= image_tag @item.image ,class:"item-box-img" %> %>
-      <%# 商品が売れている場合は、sold outの表示をしましょう。 %>
-      <%# <% if @item.buy.present? %> %>
-      <%# <% end %> %>
-      <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
-    </div>
-    <div class="item-price-box">
-      <span class="item-price">
-        <%# ¥ <%= @item.price %> %>
-      </span>
-      <span class="item-postage">
-        <%# (税込) <%= @item.deliveryfee.name %> %>
-      </span>
-    </div>
-
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <%# <% if user_signed_in? && current_user.id == @item.user_id%> %>
-    <%# <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %> %>
-    <p class='or-text'>or</p>
-    <%# <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %> %>
-    <%# <% end %> %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <%# <% if user_signed_in? && current_user.id != @item.user_id  || !user_signed_in? %> %>
-    <%# <%= link_to '購入画面に進む', new_item_buy_path(@item.id),class:"item-red-btn"%> %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <%# <% end %> %>
-    <div class="item-explain-box">
-      <%# <span><%= @item.item_explain %></span> %>
-    </div>
-    <%= form_with model: @observation, url: patient_observations_path(@patient.id), method: :post, local: true do |f| %>
     <table class="detail-table">
       <tbody>
-  <tr>
-    <th>観察時間</th>
-    <td>6:00</td>
-    <td>7:00</td>
-    <td>8:00</td>
-    <td>9:00</td>
-    <td>10:00</td>
-    <td>11:00</td>
-    <td>12:00</td>
-    <td>13:00</td>
-    <td>14:00</td>
-    <td>15:00</td>
-    <td>16:00</td>
-    <td>17:00</td>
-    <td>18:00</td>
-  </tr>
-  <tr>
-    <th>体温</th>
-    <td>
-    <%= f.text_field :temperature, maxlength: "4" %>
-    </td>
-  </tr>
-  <tr>
-    <th>脈拍数/分</th>
-    <td>
-    <%= f.text_field :pulse, maxlength: "3" %>
-    <%# <input type=text name="pulse"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>呼吸数/分</th>
-    <td>
-    <%= f.text_field :respiration, maxlength: "2" %>
-    <%# <input type=text name="respiration"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>最高血圧</th>
-    <td>
-    <%= f.text_field :high_blood_pressure, maxlength: "3" %>
-    <%# <input type=text name="high_blood_pressure"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>最低血圧</th>
-    <td>
-    <%= f.text_field :low_blood_pressure, maxlength: "3" %>
-    <%# <input type=text name="low_blood_pressure"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>SPO2</th>
-    <td>
-    <%= f.text_field :spo2, maxlength: "3" %>%
-    <%# <input type=text name="spo2"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>食事摂取量</th>
-    <td>
-    <%= f.text_field :food_intake, maxlength: "8" %>
-    <%# <input type=text name="food_intake"> %>
-    </td>
-  </tr>
-  <tr>
-    <th>水分摂取量</th>
-    <td>
-    <%= f.text_field :water_intake, maxlength: "8" %>
-    </td>
-  </tr>
-  <tr>
-    <th>便の性状</th>
-    <td><%= f.select :excresion, {'': 1, 'コロコロ便': 2, '硬い便': 3,
-    'やや硬い便': 4, '普通便': 5, 'やや柔らかい便': 6, '泥状便': 7, '水様便': 8,
-    '黒色便': 9, '暗赤色便': 10, '血便': 11, '血液付着便': 12 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>便の量</th>
-    <td><%= f.select :ex_amount, {'': 1, '無し': 2, 'うずらの卵': 3,
-    '鶏卵': 4, 'バナナ1本': 5, 'バナナ2本': 6, 'コップ1杯': 7, 'コップ2杯以上': 8 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>排尿状況</th>
-    <td>
-    </td>
-  </tr>
-  <tr>
-    <th>呼吸の副雑音</th>
-    <td><%= f.select :atten_sound, {'': 1, '無し': 2, 'ヒューヒュー': 3,
-    'グーグー': 4, 'パチパチ': 5, 'ブツブツ': 6, 'ギュー、バリ': 7 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>副雑音の部位</th>
-    <td><%= f.select :atten_part, {'': 1, '右上葉': 2, '左上葉': 3,
-    '右下葉': 4, '左下葉': 5, '両上葉': 6, '両下葉': 7, '背部右上葉': 8, '背部左上葉': 9,
-    '背部両上葉': 10, '背部右下葉': 11, '背部左下葉': 12, '両下葉': 13, '全体': 14 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>痰の性状</th>
-    <td><%= f.select :sputum, {'': 1, '無し': 2, '黄色': 3,
-    '緑色': 4, '錆びた色': 5, '白色・粘度が高い': 6, 'ピンク・泡状': 7, '白色、サラサラ': 8, '暗赤色': 9,
-    '赤色': 10 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>咳の性状</th>
-    <td><%= f.select :cough, {'': 1, '無し': 2, '痰絡みの咳': 3,
-    '乾いた咳': 4 } %>
-    </td>
-  </tr>
-  <tr>
-    <th>睡眠状況</th>
-    <td>
-    <%= f.text_field :sleep, maxlength: "8" %>
-    </td>
-  </tr>
-  <tr>
-    <th>記録者名</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>観察記録保存</th>
-    <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
-  </tr>
+        <tr>
+          <th>観察時間</th>
+          <td>6:00</td>
+          <td>7:00</td>
+          <td>8:00</td>
+          <td>9:00</td>
+          <td>10:00</td>
+          <td>11:00</td>
+          <td>12:00</td>
+          <td>13:00</td>
+          <td>14:00</td>
+          <td>15:00</td>
+          <td>16:00</td>
+          <td>17:00</td>
+          <td>18:00</td>
+        </tr>
+        <tr>
+          <th>体温</th>
+          <td><%= @observation.temperature %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>脈拍数/分</th>
+          <td><%= @observation.pulse %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>呼吸数/分</th>
+          <td><%= @observation.respiration %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>最高血圧</th>
+          <td><%= @observation.high_blood_pressure %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>最低血圧</th>
+          <td><%= @observation.low_blood_pressure %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>SPO2</th>
+          <td><%= @observation.spo2 %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>食事摂取量</th>
+          <td><%= @observation.food_intake %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>水分摂取量</th>
+          <td><%= @observation.water_intake %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>便の性状</th>
+          <td><%= @observation.excresion %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>便の量</th>
+          <td><%= @observation.ex_amount %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>排尿状況</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>呼吸の副雑音</th>
+          <td><%= @observation.atten_sound %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>副雑音の部位</th>
+          <td><%= @observation.atten_part %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>痰の性状</th>
+          <td><%= @observation.sputum %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>咳の性状</th>
+          <td><%= @observation.cough %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>睡眠状況</th>
+          <td>
+          <%= @observation.sleep %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>記録者名</th>
+          <td></td>
+          <%# <%= @observation.user.name %> %>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
       </tbody>
     </table>
-    <% end %>
 
     <div class="option">
       <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+      <%= image_tag "くま看護師.png" ,class:"favorite-star-icon" ,width:"40",height:"40"%>
+      <%= link_to "観察項目入力", edit_patient_observation_path %>
       </div>
       <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+        <%= image_tag "レントゲン1.jpg" ,class:"report-flag-icon" ,width:"40",height:"40"%>
+        <%= link_to "検査結果参照", '#' %>
+      </div>
+      <div class="treatment-btn">
+        <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
+        <%= link_to "処置の入力", '#' %>
       </div>
     </div>
   </div>
-  <%# /商品の概要 %>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
-  </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
 </div>

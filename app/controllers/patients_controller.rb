@@ -11,7 +11,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      PatientUser.create(user_id: current_user.id,patient_id: @patient.id)
+      PatientUser.create(user_id: current_user.id, patient_id: @patient.id)
       redirect_to root_path
     else
       render :new
@@ -22,7 +22,7 @@ class PatientsController < ApplicationController
 
   def patient_params
     params.require(:patient).permit(:p_num, :image, :name, :birth_date, :post_num, :prefecture_id, :city,
-                                :house_num, :apart_name, :tel, :key_person, :kp_tel, :main_disease, :sub_disease, :main_doctor).merge(user_id: current_user.id)
+                                    :house_num, :apart_name, :tel, :key_person, :kp_tel, :main_disease, :sub_disease, :main_doctor).merge(user_id: current_user.id)
   end
 
   def set_item

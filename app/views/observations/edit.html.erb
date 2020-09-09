@@ -1,42 +1,6 @@
-
-<%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
-      <%# <%= @item.item_name %> %>
-    </h2>
-    <div class='item-img-content'>
-      <%# <%= image_tag @item.image ,class:"item-box-img" %> %>
-      <%# 商品が売れている場合は、sold outの表示をしましょう。 %>
-      <%# <% if @item.buy.present? %> %>
-      <%# <% end %> %>
-      <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
-    </div>
-    <div class="item-price-box">
-      <span class="item-price">
-        <%# ¥ <%= @item.price %> %>
-      </span>
-      <span class="item-postage">
-        <%# (税込) <%= @item.deliveryfee.name %> %>
-      </span>
-    </div>
-
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <%# <% if user_signed_in? && current_user.id == @item.user_id%> %>
-    <%# <%= link_to '商品の編集', edit_item_path, method: :get, class: "item-red-btn" %> %>
-    <p class='or-text'>or</p>
-    <%# <%= link_to '削除', item_path, method: :delete, class:'item-destroy' %> %>
-    <%# <% end %> %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <%# <% if user_signed_in? && current_user.id != @item.user_id  || !user_signed_in? %> %>
-    <%# <%= link_to '購入画面に進む', new_item_buy_path(@item.id),class:"item-red-btn"%> %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
-    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <%# <% end %> %>
-    <div class="item-explain-box">
-      <%# <span><%= @item.item_explain %></span> %>
-    </div>
-    <%= form_with model: @observation, url: patient_observations_path(@patient.id), method: :post, local: true do |f| %>
+    <%= form_with  model: [@patient,@observation], local: true do |f| %>
     <table class="detail-table">
       <tbody>
   <tr>
@@ -59,49 +23,42 @@
     <th>体温</th>
     <td>
     <%= f.text_field :temperature, maxlength: "4" %>
-    <%# <input type=text name="temperature"> %>
     </td>
   </tr>
   <tr>
     <th>脈拍数/分</th>
     <td>
     <%= f.text_field :pulse, maxlength: "3" %>
-    <%# <input type=text name="pulse"> %>
     </td>
   </tr>
   <tr>
     <th>呼吸数/分</th>
     <td>
     <%= f.text_field :respiration, maxlength: "2" %>
-    <%# <input type=text name="respiration"> %>
     </td>
   </tr>
   <tr>
     <th>最高血圧</th>
     <td>
     <%= f.text_field :high_blood_pressure, maxlength: "3" %>
-    <%# <input type=text name="high_blood_pressure"> %>
     </td>
   </tr>
   <tr>
     <th>最低血圧</th>
     <td>
     <%= f.text_field :low_blood_pressure, maxlength: "3" %>
-    <%# <input type=text name="low_blood_pressure"> %>
     </td>
   </tr>
   <tr>
     <th>SPO2</th>
     <td>
     <%= f.text_field :spo2, maxlength: "3" %>%
-    <%# <input type=text name="spo2"> %>
     </td>
   </tr>
   <tr>
     <th>食事摂取量</th>
     <td>
     <%= f.text_field :food_intake, maxlength: "8" %>
-    <%# <input type=text name="food_intake"> %>
     </td>
   </tr>
   <tr>
@@ -112,15 +69,15 @@
   </tr>
   <tr>
     <th>便の性状</th>
-    <td><%= f.select :excresion, {'': 1, 'コロコロ便': 2, '硬い便': 3,
-    'やや硬い便': 4, '普通便': 5, 'やや柔らかい便': 6, '泥状便': 7, '水様便': 8,
-    '黒色便': 9, '暗赤色便': 10, '血便': 11, '血液付着便': 12 } %>
+    <td><%= f.select :excresion, {'': '', 'コロコロ便': 'コロコロ便', '硬い便': '硬い便',
+    'やや硬い便': 'やや硬い便', '普通便': '普通便', 'やや柔らかい便': 'やや柔らかい便', '泥状便': '泥状便', '水様便': '水様便',
+    '黒色便': '黒色便', '暗赤色便': '暗赤色便', '血便': '血便', '血液付着便': '血液付着便' } %>
     </td>
   </tr>
   <tr>
     <th>便の量</th>
-    <td><%= f.select :ex_amount, {'': 1, '無し': 2, 'うずらの卵': 3,
-    '鶏卵': 4, 'バナナ1本': 5, 'バナナ2本': 6, 'コップ1杯': 7, 'コップ2杯以上': 8 } %>
+    <td><%= f.select :ex_amount, {'': '', '無し': '無し', 'うずらの卵': 'うずらの卵',
+    '鶏卵': '鶏卵', 'バナナ1本': 'バナナ1本', 'バナナ2本': 'バナナ2本', 'コップ1杯': 'コップ1杯', 'コップ2杯以上': 'コップ2杯以上' } %>
     </td>
   </tr>
   <tr>
@@ -130,28 +87,28 @@
   </tr>
   <tr>
     <th>呼吸の副雑音</th>
-    <td><%= f.select :atten_sound, {'': 1, '無し': 2, 'ヒューヒュー': 3,
-    'グーグー': 4, 'パチパチ': 5, 'ブツブツ': 6, 'ギュー、バリ': 7 } %>
+    <td><%= f.select :atten_sound, {'': '', '無し': '無し', 'ヒューヒュー': 'ヒューヒュー',
+    'グーグー': 'グーグー', 'パチパチ': 'パチパチ', 'ブツブツ': 'ブツブツ', 'ギュー、バリ': 'ギュー、バリ' } %>
     </td>
   </tr>
   <tr>
     <th>副雑音の部位</th>
-    <td><%= f.select :atten_part, {'': 1, '右上葉': 2, '左上葉': 3,
-    '右下葉': 4, '左下葉': 5, '両上葉': 6, '両下葉': 7, '背部右上葉': 8, '背部左上葉': 9,
-    '背部両上葉': 10, '背部右下葉': 11, '背部左下葉': 12, '両下葉': 13, '全体': 14 } %>
+    <td><%= f.select :atten_part, {'': '', '右上葉': '右上葉', '左上葉': '左上葉',
+    '右下葉': '右下葉', '左下葉': '左下葉', '両上葉': '両上葉', '両下葉': '両下葉', '背部右上葉': '背部右上葉', '背部左上葉': '背部左上葉',
+    '背部両上葉': '背部両上葉', '背部右下葉': '背部右下葉', '背部左下葉': '背部左下葉', '両下葉': '両下葉', '全体': '全体' } %>
     </td>
   </tr>
   <tr>
     <th>痰の性状</th>
-    <td><%= f.select :sputum, {'': 1, '無し': 2, '黄色': 3,
-    '緑色': 4, '錆びた色': 5, '白色・粘度が高い': 6, 'ピンク・泡状': 7, '白色、サラサラ': 8, '暗赤色': 9,
-    '赤色': 10 } %>
+    <td><%= f.select :sputum, {'': '', '無し': '無し', '黄色': '黄色',
+    '緑色': '緑色', '錆びた色': '錆びた色', '白色・粘度が高い': '白色・粘度が高い', 'ピンク・泡状': 'ピンク・泡状', '白色、サラサラ': '白色、サラサラ', '暗赤色': '暗赤色',
+    '赤色': '赤色' } %>
     </td>
   </tr>
   <tr>
     <th>咳の性状</th>
-    <td><%= f.select :cough, {'': 1, '無し': 2, '痰絡みの咳': 3,
-    '乾いた咳': 4 } %>
+    <td><%= f.select :cough, {'': '', '無し': '無し', '痰絡みの咳': '痰絡みの咳',
+    '乾いた咳': '乾いた咳' } %>
     </td>
   </tr>
   <tr>
@@ -166,46 +123,9 @@
   </tr>
   <tr>
     <th>観察記録保存</th>
-    <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
+    <td><%= f.submit '反映', class: 'btn btn-primary btn-block' %></td>
   </tr>
       </tbody>
     </table>
     <% end %>
-
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
-  </div>
-  <%# /商品の概要 %>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
-  </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
 </div>
