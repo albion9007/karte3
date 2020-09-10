@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_130334) do
+ActiveRecord::Schema.define(version: 2020_09_09_133829) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_07_130334) do
   end
 
   create_table "observations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "temperature", precision: 10
+    t.decimal "temperature", precision: 3, scale: 1
     t.integer "pulse"
     t.integer "respiration"
     t.integer "high_blood_pressure"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 2020_09_07_130334) do
     t.bigint "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "time", null: false
+    t.string "hainyou", null: false
+    t.string "user_name", null: false
     t.index ["patient_id"], name: "index_observations_on_patient_id"
     t.index ["user_id"], name: "index_observations_on_user_id"
   end
