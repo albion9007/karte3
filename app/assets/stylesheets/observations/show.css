@@ -1,0 +1,136 @@
+.observation-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.observation-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.observation-show-table {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 30%;
+  font-size: 20px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr{
+  border-bottom: solid 2px white;
+}
+
+table tr:last-child{
+  border-bottom: none;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+table td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.ns-btn {
+  border-radius: 40px;
+  width: 30vw;
+  height: 10vh;
+  font-size: 30px;
+  min-width: 200px;
+  color: rgb(26, 2, 24);
+  border: 5px solid #eb208c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.kuma-icon {
+  margin-right: 5px;
+}
+
+.kensa-btn {
+  border-radius: 40px;
+  width: 30vw;
+  min-width: 200px;
+  font-size: 30px;
+  padding: 1vh 0;
+  color: black;
+  border: 5px solid #0c08ce;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kensa-icon {
+  margin-right: 5px;
+}
+
+.syoti-btn {
+  border-radius: 40px;
+  width: 30vw;
+  min-width: 200px;
+  font-size: 30px;
+  padding: 1vh 0;
+  color: black;
+  border: 5px solid #2ad47f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+
+}
+
+.treatment-icon {
+  margin-right: 5px;
+}
+
+table{
+  width: 100%;
+  table-layout: fixed;
+}

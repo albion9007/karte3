@@ -150,7 +150,7 @@ PASS:0416
 - belongs_to_active_hash :prefecture
 - belongs_to :to_do_lists
 - has_many :treatments
-- has_one :monitors
+- has_many :observations
 - has_one_attached :image
 
 ## patient_users テーブル
@@ -165,26 +165,28 @@ PASS:0416
 - belongs_to :patient
 - belongs_to :user
 
-## monitors テーブル
+## observations テーブル
 
 | Column   | Type     | Options                        |
 | -------- | --------  | ------------------------------ |
 | patient_id  | references  | null: false, foreign_key: true |
 | user_id  | references | null: false, foreign_key: true |
-| temperature         | integer    |
+| temperature         | decimal    |
 | pulse         | integer    |
 | respiration         | integer    |
-| blood_pressure         | integer    |
+| high_blood_pressure         | integer    |
+| low_blood_pressure         | integer    |
 | spo2         | integer    |
 | food_intake         | integer    |
 | water_intake         | integer    |
-| excresion         | integer    |
-| atten_sound         | integer    |
-| lung_sound         | integer    |
-| sputum         | integer    |
-| cough         | integer    |
-| sleep         | integer    |
-| time         | string    | null: false |
+| excresion_id         | integer    |
+| ex_amount_id         | integer    |
+| atten_sound_id         | integer    |
+| lung_sound_id         | integer    |
+| sputum_id         | integer    |
+| cough_id         | integer    |
+| sleep         | string    |
+
 ### Association
 - belongs_to :patients
 

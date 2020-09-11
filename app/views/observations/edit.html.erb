@@ -1,0 +1,119 @@
+<div class="item-show">
+  <div class="item-box">
+    <%= form_with  model: [@patient,@observation], local: true do |f| %>
+    <table class="detail-table">
+      <tbody>
+  <tr>
+    <th>観察時間</th>
+    <td><%= f.text_field :time %></td>
+  </tr>
+  <tr>
+    <th>体温</th>
+    <td>
+    <%= f.text_field :temperature, maxlength: "4" %>
+    </td>
+  </tr>
+  <tr>
+    <th>脈拍数/分</th>
+    <td>
+    <%= f.text_field :pulse, maxlength: "3" %>
+    </td>
+  </tr>
+  <tr>
+    <th>呼吸数/分</th>
+    <td>
+    <%= f.text_field :respiration, maxlength: "2" %>
+    </td>
+  </tr>
+  <tr>
+    <th>最高血圧</th>
+    <td>
+    <%= f.text_field :high_blood_pressure, maxlength: "3" %>
+    </td>
+  </tr>
+  <tr>
+    <th>最低血圧</th>
+    <td>
+    <%= f.text_field :low_blood_pressure, maxlength: "3" %>
+    </td>
+  </tr>
+  <tr>
+    <th>SPO2</th>
+    <td>
+    <%= f.text_field :spo2, maxlength: "3" %>%
+    </td>
+  </tr>
+  <tr>
+    <th>食事摂取量</th>
+    <td>
+    <%= f.text_field :food_intake, maxlength: "8" %>
+    </td>
+  </tr>
+  <tr>
+    <th>水分摂取量</th>
+    <td>
+    <%= f.text_field :water_intake, maxlength: "8" %>
+    </td>
+  </tr>
+  <tr>
+    <th>便の性状</th>
+    <td><%= f.select :excresion, {'': '', 'コロコロ便': 'コロコロ便', '硬い便': '硬い便',
+    'やや硬い便': 'やや硬い便', '普通便': '普通便', 'やや柔らかい便': 'やや柔らかい便', '泥状便': '泥状便', '水様便': '水様便',
+    '黒色便': '黒色便', '暗赤色便': '暗赤色便', '血便': '血便', '血液付着便': '血液付着便' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>便の量</th>
+    <td><%= f.select :ex_amount, {'': '', '無し': '無し', 'うずらの卵': 'うずらの卵',
+    '鶏卵': '鶏卵', 'バナナ1本': 'バナナ1本', 'バナナ2本': 'バナナ2本', 'コップ1杯': 'コップ1杯', 'コップ2杯以上': 'コップ2杯以上' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>排尿状況</th>
+    <td><%= f.text_field :hainyou %>
+    </td>
+  </tr>
+  <tr>
+    <th>呼吸の副雑音</th>
+    <td><%= f.select :atten_sound, {'': '', '無し': '無し', 'ヒューヒュー': 'ヒューヒュー',
+    'グーグー': 'グーグー', 'パチパチ': 'パチパチ', 'ブツブツ': 'ブツブツ', 'ギュー、バリ': 'ギュー、バリ' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>副雑音の部位</th>
+    <td><%= f.select :atten_part, {'': '', '右上葉': '右上葉', '左上葉': '左上葉',
+    '右下葉': '右下葉', '左下葉': '左下葉', '両上葉': '両上葉', '両下葉': '両下葉', '背部右上葉': '背部右上葉', '背部左上葉': '背部左上葉',
+    '背部両上葉': '背部両上葉', '背部右下葉': '背部右下葉', '背部左下葉': '背部左下葉', '両下葉': '両下葉', '全体': '全体' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>痰の性状</th>
+    <td><%= f.select :sputum, {'': '', '無し': '無し', '黄色': '黄色',
+    '緑色': '緑色', '錆びた色': '錆びた色', '白色・粘度が高い': '白色・粘度が高い', 'ピンク・泡状': 'ピンク・泡状', '白色、サラサラ': '白色、サラサラ', '暗赤色': '暗赤色',
+    '赤色': '赤色' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>咳の性状</th>
+    <td><%= f.select :cough, {'': '', '無し': '無し', '痰絡みの咳': '痰絡みの咳',
+    '乾いた咳': '乾いた咳' } %>
+    </td>
+  </tr>
+  <tr>
+    <th>睡眠状況</th>
+    <td>
+    <%= f.text_field :sleep, maxlength: "8" %>
+    </td>
+  </tr>
+  <tr>
+    <th>記録者名</th>
+    <td></td>
+  </tr>
+  <tr>
+    <th>観察記録保存</th>
+    <td><%= f.submit '反映', class: 'btn btn-primary btn-block' %></td>
+  </tr>
+      </tbody>
+    </table>
+    <% end %>
+</div>

@@ -30,7 +30,7 @@
         <%# <病室内患者様一覧> %>
         <ul class="more_list">
         <% @patients.each do |patient| %>
-          <%= link_to "#" do %>
+          <%= link_to patient_path(patient.id) do %>
           <li>
           <%= image_tag patient.image, class:"patient-img"%>
           <%= patient.name %>
