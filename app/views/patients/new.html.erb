@@ -4,10 +4,9 @@
   <div class="items-sell-main">
     <h2 class="items-sell-title">新規入院患者様の情報を入力して下さい</h2>
     <%= form_with model: @patient, local: true do |f| %>
-    <%# <%= form_with model: @karte, url: user_registration_path, class: 'registration-main', local: true do |f| %> %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# <%= render 'shared/error_messages', model: f.object %> %>
+    <%# <%= render 'shared/error_messages', model: f.object %> 
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <div class='login-flash-message'>
       <%= flash[:notice] %>
@@ -134,7 +133,6 @@
         <%= f.text_field 'main_doctor', class:"input-default", id:"main-doctor", placeholder:"例）Dr.藤井勝",maxlength:"15"%>
       </div>
     </div>
-    <%# <% end %> %>
 
     <%# 注意書き %>
     <div class="caution">

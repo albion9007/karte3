@@ -16,9 +16,39 @@ class ObservationsController < ApplicationController
   end
 
   def show
-    observations = Observation.where(patient_id: params[:patient_id]).order(time: "DESC").to_a
+    observations = Observation.where(patient_id: params[:patient_id]).to_a
     @observations = observations.sort_by{|o| o.time.delete(":").to_i}
+    @data = @observations.map  do |o|
+      if o.temperature.present?
+        [o.time, o.temperature]
+      end
+    end
+    @data2 = @observations.map do |o|
+      if o.pulse.present?
+        [o.time, o.pulse]
+      end
+    end
+    @data3 = @observations.map do |o|
+      if o.respiration.present?
+        [o.time, o.respiration]
+      end
+    end
+    @data4 = @observations.map do |o|
+      if o.high_blood_pressure.present?
+        [o.time, o.high_blood_pressure]
+      end
+    end
+    @data5 = @observations.map do |o|
+      if o.low_blood_pressure.present?
+        [o.time, o.low_blood_pressure]
+      end
+    end
+
   end
+
+  # def edit
+  #   observations = Observation.where(patient_id: params[:patient_id]).to_a
+  # end
 
   def update
     if @observation.update(observation_params) # バリデーションをクリアした時
@@ -40,6 +70,7 @@ class ObservationsController < ApplicationController
   end
 
   def set_observation
-    @observation = Observation.find(params[:patient_id])
+    # @observation = Observation.find(params[:patient_id])
+    @observation = Observation.find(params[:id])
   end
 end

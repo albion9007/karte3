@@ -18,6 +18,14 @@ class PatientsController < ApplicationController
     end
   end
 
+  def update
+    if @patient.update(patient_params)
+      redirect_to patient_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def patient_params

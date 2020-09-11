@@ -1,38 +1,36 @@
-
-<%# 商品の概要 %>
-<div class="item-show">
-  <div class="item-box">
+<div class="patient-show">
+  <div class="patient-box">
     <h2 class="name">
       <%= @patient.name %>  [<%= @patient.main_doctor %>]
     </h2>
-    <div class='item-img-content'>
-      <%= image_tag @patient.image ,class:"item-box-img" %>
+    <div class='patient-img-content'>
+      <%= image_tag @patient.image ,class:"patient-box-img" %>
       <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
     </div>
-    <div class="item-price-box">
-      <span class="item-price">
+    <div class="patient-disease-box">
+      <span class="patient-main-disease">
          <%= @patient.main_disease %>
       </span>
-      <span class="item-postage">
+      <span class="patient-sub-disease">
         [既往歴]<%= @patient.sub_disease %>
       </span>
     </div>
 
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
     <% if user_signed_in? %>
-    <%= link_to '観察記録を入力する', new_patient_observation_path(@patient.id),class:"item-red-btn"%>
-    <%= link_to '観察記録を参照する', patient_observation_path(@patient.id),class:"item-red-btn"%>
-    <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "patient-edit-btn" %>
+    <%= link_to '観察記録を入力する', new_patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
+    <%= link_to '観察記録を参照する', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
+    <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "btn btn-malformation btn-malformation--pastel" %>
     <p class='or-text'>or</p>
-    <%= link_to '退院', patient_path, method: :delete, class:'item-destroy' %>
+    <%= link_to '退院', patient_path, method: :delete, class:'btn btn--yellow btn--cubic' %>
     <% end %>
     
-    <div class="option">
-      <div class="favorite-btn">
+    <div class="call">
+      <div class="dr-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
         <span>Dr.緊急呼び出し</span>
       </div>
-      <div class="report-btn">
+      <div class="haras-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <span>ハラスメントの通報</span>
       </div>

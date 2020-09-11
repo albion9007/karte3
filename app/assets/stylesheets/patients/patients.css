@@ -5,12 +5,12 @@
 .side-task {
   height: 100vh;
   width: 300px;
-  background-color: #253141;
+  background-color: #ffffff00;
 }
 
 .side-task-header {
   height: 100px;
-  background-color: #253141;
+  background-color: #0adef18a;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -18,25 +18,30 @@
 }
 
 .header-name a {
-  font-size: 16px;
-  color: #FAFAFA;
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #22020f;
   text-decoration: none;
 }
 
 .create-to_do_list {
-  font-size: 10px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .create-to_do_list a {
-  color: deepskyblue;
-  border: 1px solid lightblue;
+  color: rgba(55, 4, 240, 0.856);
+  border: 5px solid rgba(22, 104, 212, 0.692);
+  background-color: #f7f8f836;
   padding: 14px;
   text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .to_do_list {
   height: calc(100vh - 100px);
-  background-color: #2f3e51;
+  background-color: #0ad6f13d;
   padding: 0 20px;
   overflow: scroll;
 }
@@ -53,13 +58,17 @@
 }
 
 .list-name a {
-  color: white;
+  color: rgb(5, 83, 51);
   text-decoration: none;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .word-info {
-  background-color: #ffffff;
+  background-color: #0ad6f13d;
   width: calc(100% - 300px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .word-header {
@@ -76,13 +85,16 @@
 }
 
 .header-button {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .header-button a {
   text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
+  font-size: 30px;
+  font-family: monospace;
+  border: 1px solid rgb(230, 148, 148);
+  background-color: floralwhite;
+  color: rgb(230, 148, 148);
   padding: 20px;
 }
 
@@ -199,4 +211,41 @@ div.word-patients div.right-patients div.room .more ul.more_list li a {
 div.word-patients div.right-patients div.room .more ul.more_list li a:hover {
   background-color: #e7bce7;
   color: rgb(117, 11, 94);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
 }

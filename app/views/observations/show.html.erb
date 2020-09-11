@@ -1,6 +1,11 @@
-<div class="item-show">
-  <div class="item-box">
-    <table class="detail-table">
+<div class="observation-show">
+  <div class="observation-box">
+  <%= line_chart [{name: "体温", data: @data.compact}], width: "800px", height: "500px", min: 33, max:42  %>
+  <%= line_chart [{name: "脈拍", data: @data2.compact}], width: "800px", height: "500px", min: 40, max:130 %>
+  <%= line_chart [{name: "呼吸数", data: @data3.compact}], width: "800px", height: "500px", min: 10, max:30 %>
+  <%= line_chart [{name: "最高血圧", data: @data4.compact}], width: "800px", height: "500px", min: 50, max:300 %>
+  <%= line_chart [{name: "最低血圧", data: @data5.compact}], width: "800px", height: "500px", min: 20, max:120 %>
+    <table class="observation-show-table">
       <tbody>
       <tr>
         <th>観察時間</th>
@@ -114,11 +119,11 @@
     </table>
     <div class="btn">
       <div class="ns-btn">
-      <%= image_tag "くま看護師.png" ,class:"favorite-star-icon" ,width:"40",height:"40"%>
+      <%= image_tag "くま看護師.png" ,class:"kuma-icon" ,width:"40",height:"40"%>
       <%= link_to "観察項目編集", edit_patient_observation_path %>
       </div>
       <div class="kensa-btn">
-        <%= image_tag "レントゲン1.jpg" ,class:"report-flag-icon" ,width:"40",height:"40"%>
+        <%= image_tag "レントゲン1.jpg" ,class:"kensa-icon" ,width:"40",height:"40"%>
         <%= link_to "検査結果参照", '#' %>
       </div>
       <div class="syoti-btn">

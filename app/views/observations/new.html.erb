@@ -1,4 +1,4 @@
-<div class="item-show">
+<div class="observation-new">
   <div class="item-box">
     <%= form_with  model: [@patient,@observation], local: true do |f| %>
     <%= f.hidden_field :patient_id, :value => @patient.id%>
@@ -41,7 +41,7 @@
   <tr>
     <th>SPO2</th>
     <td>
-    <%= f.text_field :spo2, maxlength: "3" %>%
+    <%= f.text_field :spo2, maxlength: "3" %>
     </td>
   </tr>
   <tr>
