@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_133829) do
+ActiveRecord::Schema.define(version: 2020_09_13_075643) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -90,6 +90,19 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
+  create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "time", null: false
+    t.string "test"
+    t.string "medicine"
+    t.string "injection"
+    t.bigint "patient_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_treatments_on_patient_id"
+    t.index ["user_id"], name: "index_treatments_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -109,4 +122,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
   add_foreign_key "patient_users", "patients"
   add_foreign_key "patient_users", "users"
   add_foreign_key "patients", "users"
+  add_foreign_key "treatments", "patients"
+  add_foreign_key "treatments", "users"
 end
