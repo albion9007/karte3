@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :patients do
     resources :observations, only: [:new, :create, :edit, :show, :update]
+    resources :treatments, only: [:new, :create]
   end
 end
