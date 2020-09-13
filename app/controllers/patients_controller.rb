@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_patient, only: [:show, :edit, :update, :destroy]
   def new
     @patient = Patient.new
   end
@@ -18,15 +18,17 @@ class PatientsController < ApplicationController
     end
   end
 
-  def edit
-    @patient = Patient.find(patient_id: params[:patient_id])
-  end
-
   def update
     if @patient.update(patient_params)
       redirect_to patient_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @patient.destroy
+      redirect_to root_path
     end
   end
 
@@ -37,7 +39,7 @@ class PatientsController < ApplicationController
                                     :house_num, :apart_name, :tel, :key_person, :kp_tel, :main_disease, :sub_disease, :main_doctor).merge(user_id: current_user.id)
   end
 
-  def set_item
+  def set_patient
     @patient = Patient.find(params[:id])
   end
 end

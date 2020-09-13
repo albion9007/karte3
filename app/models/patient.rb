@@ -1,9 +1,9 @@
 class Patient < ApplicationRecord
-  has_many :patient_users
+  has_many :patient_users, dependent: :destroy
   has_many :users, through: :patient_users
   # belongs_to :to_do_lists
   # has_many :treatments
-  has_many :observations
+  has_many :observations, dependent: :destroy
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
