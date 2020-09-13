@@ -5,131 +5,131 @@
   <%= line_chart [{name: "呼吸数", data: @data3.compact}], width: "800px", height: "500px", min: 10, max:30 %>
   <%= line_chart [{name: "最高血圧", data: @data4.compact}], width: "800px", height: "500px", min: 50, max:300 %>
   <%= line_chart [{name: "最低血圧", data: @data5.compact}], width: "800px", height: "500px", min: 20, max:120 %>
-    <table class="observation-show-table">
-      <tbody>
-      <tr>
-        <th>観察時間</th>
-            <% @observations.map(&:time).each do |time| %>
-            <td><%= time %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>体温</th>
-        <% @observations.map(&:temperature).each do |temperature| %>
-            <td><%= temperature %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>脈拍数</th>
-        <% @observations.map(&:pulse).each do |pulse| %>
-            <td><%= pulse %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>呼吸数/分</th>
-        <% @observations.map(&:respiration).each do |respiration| %>
-            <td><%= respiration %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>最高血圧</th>
-        <% @observations.map(&:high_blood_pressure).each do |high_blood_pressure| %>
-            <td><%= high_blood_pressure %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>最低血圧</th>
-        <% @observations.map(&:low_blood_pressure).each do |low_blood_pressure| %>
-            <td><%= low_blood_pressure %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>SPO2</th>
-        <% @observations.map(&:spo2).each do |spo2| %>
-            <td><%= spo2 %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>食事摂取量</th>
-        <% @observations.map(&:food_intake).each do |food_intake| %>
-            <td><%= food_intake %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>水分摂取量</th>
-        <% @observations.map(&:water_intake).each do |water_intake| %>
-            <td><%= water_intake %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>便の性状</th>
-        <% @observations.map(&:excresion).each do |excresion| %>
-            <td><%= excresion %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>便の量</th>
-        <% @observations.map(&:ex_amount).each do |ex_amount| %>
-            <td><%= ex_amount %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>排尿状況</th>
-        <% @observations.map(&:hainyou).each do |hainyou| %>
-            <td><%= hainyou %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>呼吸の副雑音</th>
-        <% @observations.map(&:atten_sound).each do |atten_sound| %>
-            <td><%= atten_sound %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>副雑音の部位</th>
-        <% @observations.map(&:atten_part).each do |atten_part| %>
-            <td><%= atten_part %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>痰の性状</th>
-        <% @observations.map(&:sputum).each do |sputum| %>
-            <td><%= sputum %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>咳の性状</th>
-        <% @observations.map(&:cough).each do |cough| %>
-            <td><%= cough %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>睡眠状況</th>
-        <% @observations.map(&:sleep).each do |sleep| %>
-            <td><%= sleep %></td>
-            <% end %>
-      </tr>
-      <tr>
-        <th>記録者名</th>
-        <% @observations.map(&:user_name).each do |user_name| %>
-            <td><%= user_name %></td>
-            <% end %>
-      </tr> 
-      </tbody>
-    </table>
-    <div class="btn">
-      <div class="ns-btn">
-      <%= image_tag "くま看護師.png" ,class:"kuma-icon" ,width:"40",height:"40"%>
-      <%= link_to "観察項目編集", edit_patient_observation_path %>
-      </div>
-      <div class="kensa-btn">
-        <%= image_tag "レントゲン1.jpg" ,class:"kensa-icon" ,width:"40",height:"40"%>
-        <%= link_to "検査結果参照", '#' %>
-      </div>
-      <div class="syoti-btn">
-        <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
-        <%= link_to "処置の入力", '#' %>
-      </div>
+  <table class="observation-show-table">
+    <tbody>
+    <tr>
+      <th>観察時間</th>
+          <% @observations.map(&:time).each do |time| %>
+          <td><%= time %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>体温</th>
+      <% @observations.map(&:temperature).each do |temperature| %>
+          <td><%= temperature %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>脈拍数</th>
+      <% @observations.map(&:pulse).each do |pulse| %>
+          <td><%= pulse %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>呼吸数/分</th>
+      <% @observations.map(&:respiration).each do |respiration| %>
+          <td><%= respiration %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>最高血圧</th>
+      <% @observations.map(&:high_blood_pressure).each do |high_blood_pressure| %>
+          <td><%= high_blood_pressure %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>最低血圧</th>
+      <% @observations.map(&:low_blood_pressure).each do |low_blood_pressure| %>
+          <td><%= low_blood_pressure %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>SPO2</th>
+      <% @observations.map(&:spo2).each do |spo2| %>
+          <td><%= spo2 %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>食事摂取量</th>
+      <% @observations.map(&:food_intake).each do |food_intake| %>
+          <td><%= food_intake %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>水分摂取量</th>
+      <% @observations.map(&:water_intake).each do |water_intake| %>
+          <td><%= water_intake %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>便の性状</th>
+      <% @observations.map(&:excresion).each do |excresion| %>
+          <td><%= excresion %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>便の量</th>
+      <% @observations.map(&:ex_amount).each do |ex_amount| %>
+          <td><%= ex_amount %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>排尿状況</th>
+      <% @observations.map(&:hainyou).each do |hainyou| %>
+          <td><%= hainyou %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>呼吸の副雑音</th>
+      <% @observations.map(&:atten_sound).each do |atten_sound| %>
+          <td><%= atten_sound %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>副雑音の部位</th>
+      <% @observations.map(&:atten_part).each do |atten_part| %>
+          <td><%= atten_part %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>痰の性状</th>
+      <% @observations.map(&:sputum).each do |sputum| %>
+          <td><%= sputum %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>咳の性状</th>
+      <% @observations.map(&:cough).each do |cough| %>
+          <td><%= cough %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>睡眠状況</th>
+      <% @observations.map(&:sleep).each do |sleep| %>
+          <td><%= sleep %></td>
+          <% end %>
+    </tr>
+    <tr>
+      <th>記録者名</th>
+      <% @observations.map(&:user_name).each do |user_name| %>
+          <td><%= user_name %></td>
+          <% end %>
+    </tr> 
+    </tbody>
+  </table>
+  <div class="observation-show-btn">
+    <div class="ns-btn">
+    <%= image_tag "くま看護師.png" ,class:"kuma-icon" ,width:"40",height:"40"%>
+    <%= link_to "観察項目編集", edit_patient_observation_path %>
     </div>
+    <div class="kensa-btn">
+      <%= image_tag "レントゲン2.jpg" ,class:"kensa-icon" ,width:"40",height:"40"%>
+      <%= link_to "検査結果参照", '#' %>
+    </div>
+    <div class="syoti-btn">
+      <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
+      <%= link_to "処置の入力", '#' %>
+    </div>
+  </div>
   </div>
 </div>

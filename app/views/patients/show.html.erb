@@ -5,7 +5,6 @@
     </h2>
     <div class='patient-img-content'>
       <%= image_tag @patient.image ,class:"patient-box-img" %>
-      <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
     </div>
     <div class="patient-disease-box">
       <span class="patient-main-disease">
@@ -22,7 +21,7 @@
     <%= link_to '観察記録を参照する', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
     <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "btn btn-malformation btn-malformation--pastel" %>
     <p class='or-text'>or</p>
-    <%= link_to '退院', patient_path, method: :delete, class:'btn btn--yellow btn--cubic' %>
+    <%= link_to '退院', patient_path, method: :delete, class:'btn btn-malformation btn-malformation--pastel' %>
     <% end %>
     
     <div class="call">
