@@ -45,16 +45,17 @@
 .account-page .field .field-label {
   padding: 10px 0;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 200;
 }
 .account-page .field .field-label i {
-  font-size: 11px;
+  font-size: 17px;
 }
 .account-page .field .field-input input {
   width: 100%;
   padding: 10px;
   letter-spacing: 1px;
+  font-size: large;
 }
 .account-page .btn {
   display: inline-block;
