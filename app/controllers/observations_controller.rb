@@ -35,9 +35,11 @@ class ObservationsController < ApplicationController
     end
   end
 
-  # def edit
-  #   observations = Observation.where(patient_id: params[:patient_id]).to_a
-  # end
+  def edit
+    @patient = Patient.find(patient_id: params[:patient_id])
+    @observation = Observation.find(observation: params[:observation_id])
+    # observations = Observation.where(patient_id: params[:patient_id]).to_a
+  end
 
   def update
     if @observation.update(observation_params) # バリデーションをクリアした時

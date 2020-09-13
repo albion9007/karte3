@@ -1,7 +1,7 @@
 .observation-show {
-  background-color: #f8f8f8;
+  background-color: #c6eff3;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,8 +9,8 @@
 }
 
 .observation-box {
-  background-color: #FFF;
-  width: 70vw;
+  background-color: rgb(234, 247, 248);
+  width: 90vw;
   min-width: 1200px;
   padding: 10vh 15vw;
   display: flex;
@@ -20,15 +20,15 @@
 
 
 .observation-show-table {
-  margin-bottom: 30px;
-  width: 100%;
-  height: 30%;
+  margin-bottom: 50px;
+  width: 90vw;
+  height: 100%;
   font-size: 20px;
 }
 
 table{
-  width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 table tr{
@@ -42,7 +42,7 @@ table tr:last-child{
 table th{
   position: relative;
   text-align: left;
-  width: 30%;
+  width: 10vw;
   background-color: #52c2d0;
   color: white;
   text-align: center;
@@ -64,16 +64,18 @@ table th:after{
 
 table td{
   text-align: left;
-  width: 70%;
+  width: 80%;
   text-align: center;
   background-color: #eee;
   padding: 10px 0;
 }
 
-.btn {
+.observation-show-btn {
+  margin: 70px 50px;
   display: flex;
   justify-content: space-around;
   position: relative;
+
 }
 
 .ns-btn {
@@ -128,9 +130,4 @@ table td{
 
 .treatment-icon {
   margin-right: 5px;
-}
-
-table{
-  width: 100%;
-  table-layout: fixed;
 }

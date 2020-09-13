@@ -18,6 +18,10 @@ class PatientsController < ApplicationController
     end
   end
 
+  def edit
+    @patient = Patient.find(patient_id: params[:patient_id])
+  end
+
   def update
     if @patient.update(patient_params)
       redirect_to patient_path
