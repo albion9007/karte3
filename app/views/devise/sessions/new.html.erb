@@ -1,33 +1,57 @@
-<div class='account-page' id='account-page'>
+<%# <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Begin the work</h2>
-      <h5>登録している職員は職員情報を入力して下さい</h5>
-      <%= render "devise/shared/links"%>
-    </div>
+      <h5>登録している職員は職員情報を入力して下さい</h5> %>
+      <%# <%= render "devise/shared/links" %> %>
+    <%# </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
-        <div class='field'>
+      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|  %> %>
+      <%# <div class='field'>
           <div class='field-label'>
-            <%= f.label :メールアドレス%>
-          </div>
+            <%= f.label :メールアドレス %> %>
+          <%# </div>
           <div class='field-input'>
-            <%= f.email_field :email, autofocus: true%>
-          </div>
+            <%= f.email_field :email, autofocus: true %> %>
+          <%# </div>
           <div class='field'>
             <div class='field-label'>
-              <%= f.label :パスワード%>
-              <i>(英数字6文字以上)</i>
+              <%= f.label :パスワード %> %>
+              <%# <i>(英数字6文字以上)</i> 
             </div>
             <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
-            </div>
+              <%= f.password_field :password, autocomplete: "off" %> %>
+            <%# </div> 
           </div>
           <div class='actions'>
-            <%= f.submit "Good luck", class: 'btn'%>
-          </div>
+            <%= f.submit "Good luck", class: 'btn' %> %>
+          <%# </div>
         </div>
-      <% end %>
-    </div>
+      <% end %> %>
+    <%# </div>
   </div>
+</div> %>
+
+
+<div class="login-view">
+  <div class="login-form">
+    <p class="login-text">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
+      </span>
+    </p>
+    <%= render "devise/shared/links" %>
+    <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
+      <div class='input-field'>
+        <%= f.email_field :email, class:"login-username", autofocus: true, placeholder:"Email" %>
+        <%= f.password_field :password, class:"login-password", autocomplete: "off",  placeholder:"Password" %>
+      </div>
+    <%= f.submit "Good luck", class: 'login-submit' %>
+<%# <a href="#" class="login-forgot-pass">forgot password?</a> %>
+
+    <% end %>
+  </div>
+  <div class="underlay-photo"></div>
+  <div class="underlay-black"></div>
 </div>

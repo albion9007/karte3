@@ -1,0 +1,36 @@
+<div class="observation-new">
+  <div class="item-box">
+    <%= form_with  model: [@patient,@treatment], local: true do |f| %>
+    <table class="detail-table">
+      <tbody>
+      <tr>
+        <th>処置時間</th>
+        <td><%= f.text_field :time, maxlength: "5" %></td>
+      </tr>
+      <tr>
+        <th>検査</th>
+        <td><%= f.select :test, {'': '', '採血': '採血', '検尿': '検尿',
+        '採痰': '採痰', '胸部レントゲン': '胸部レントゲン', '胸部CT': '胸部CT',
+        '肺生検': '肺生検', '呼吸機能検査': '呼吸機能検査' } %>
+        </td>
+      </tr>
+      <tr>
+        <th>飲み薬</th>
+        <td>
+        <%= f.text_field :medicine, maxlength: "15" %>
+        </td>
+      </tr>
+      <tr>
+        <th>注射</th>
+        <td>
+        <%= f.text_field :injection, maxlength: "15" %>
+        </td>
+      </tr>
+      <tr>
+        <th>指示を出す</th>
+        <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
+      </tr>
+      </tbody>
+    </table>
+    <% end %>
+</div>

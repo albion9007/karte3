@@ -20,7 +20,7 @@
   <div class="left-patients">
     <div class="room">
       <div class="more">
-        <a href="#">301</a>
+        <a>301</a>
         <%# <select>
         <%# <option value="">301</option> %>
         <%# <% Patient.all.each do |patient| %> 
@@ -29,7 +29,7 @@
         <%# </select> %> 
         <%# <病室内患者様一覧> %>
         <ul class="more_list">
-        <% @patients.each do |patient| %>
+          <% @patients.each do |patient| %>
           <%= link_to patient_path(patient.id) do %>
           <li>
           <%= image_tag patient.image, class:"patient-img"%>
