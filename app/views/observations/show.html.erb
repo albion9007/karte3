@@ -15,51 +15,79 @@
     </tr>
     <tr>
       <th>体温</th>
-      <% @observations.map(&:temperature).each do |temperature| %>
-          <td><%= temperature %></td>
+      <%# value, data-id, data-patient_idこの3つにそれぞれ設定するためにmapではなくeachにする。 %>
+      <% @observations.each do |observation| %>
+          <td>
+          <%# javascript/observation/index.jsにcssの様にクラス指定してデータを渡す %>
+            <%# temperatureデータにclass="hyouji"を付与して渡す %>
+            <div class="hyouji"><%= observation.temperature %></div>
+<%# 表示されているデータの編集のために、input type="text"で入力フォームを作り、class="nyu-ryoku"を付与して渡す %>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.temperature %>" data-col="temperature" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
           <% end %>
     </tr>
     <tr>
       <th>脈拍数</th>
-      <% @observations.map(&:pulse).each do |pulse| %>
-          <td><%= pulse %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.pulse %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.pulse %>"  data-col="pulse" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>呼吸数/分</th>
-      <% @observations.map(&:respiration).each do |respiration| %>
-          <td><%= respiration %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.respiration %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.respiration %>"  data-col="respiration" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>最高血圧</th>
-      <% @observations.map(&:high_blood_pressure).each do |high_blood_pressure| %>
-          <td><%= high_blood_pressure %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.high_blood_pressure %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.high_blood_pressure %>"  data-col="high_blood_pressure" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>最低血圧</th>
-      <% @observations.map(&:low_blood_pressure).each do |low_blood_pressure| %>
-          <td><%= low_blood_pressure %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.low_blood_pressure %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.low_blood_pressure %>"  data-col="low_blood_pressure" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>SPO2</th>
-      <% @observations.map(&:spo2).each do |spo2| %>
-          <td><%= spo2 %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.spo2 %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.spo2 %>"  data-col="spo2" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>食事摂取量</th>
-      <% @observations.map(&:food_intake).each do |food_intake| %>
-          <td><%= food_intake %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.food_intake %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.food_intake %>"  data-col="food_intake" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>水分摂取量</th>
-      <% @observations.map(&:water_intake).each do |water_intake| %>
-          <td><%= water_intake %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.water_intake %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.water_intake %>"  data-col="water_intake" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>便の性状</th>
@@ -105,9 +133,12 @@
     </tr>
     <tr>
       <th>睡眠状況</th>
-      <% @observations.map(&:sleep).each do |sleep| %>
-          <td><%= sleep %></td>
-          <% end %>
+      <% @observations.each do |observation| %>
+          <td>
+            <div class="hyouji"><%= observation.sleep %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= observation.sleep %>"  data-col="sleep" data-id="<%= observation.id %>" data-patient_id="<%= observation.patient_id %>">
+          </td>
+      <% end %>
     </tr>
     <tr>
       <th>記録者名</th>
@@ -133,3 +164,4 @@
   </div>
   </div>
 </div>
+<%= javascript_pack_tag 'observation/application'%>

@@ -1,6 +1,8 @@
 class ObservationsController < ApplicationController
-  before_action :set_patient, only: [:new, :create, :edit, :update]
-  before_action :set_observation, only: [:edit, :update]
+  before_action :set_patient, only: [:new, :create, :edit, :update, :partial_update]
+  before_action :set_observation, only: [:edit, :update, :partial_update]
+  # railsのデフォルトCSRF対策を外す
+  protect_from_forgery :except => [:partial_update]
 
   def new
     @observation = Observation.new
@@ -47,6 +49,34 @@ class ObservationsController < ApplicationController
     else
       render :edit # バリデーションに弾かれた時
     end
+  end
+# ajaxから呼び出されるためのアクションを設定する
+  def partial_update
+    # ajaxで指定されたカラムを更新する
+    # colで指定されたカラムをvalueで指定された値に更新する
+    if params[:col] == 'temperature'
+      @observation.temperature = params[:value]
+    elsif params[:col] == 'pulse'
+      @observation.pulse = params[:value]
+    elsif params[:col] == 'respiration'
+      @observation.respiration = params[:value]
+    elsif params[:col] == 'high_blood_pressure'
+      @observation.high_blood_pressure = params[:value]
+    elsif params[:col] == 'low_blood_pressure'
+      @observation.low_blood_pressure = params[:value]
+    elsif params[:col] == 'spo2'
+      @observation.spo2 = params[:value]
+    elsif params[:col] == 'food_intake'
+      @observation.food_intake = params[:value]
+    elsif params[:col] == 'water_intake'
+      @observation.water_intake = params[:value]
+    elsif params[:col] == 'sleep'
+      @observation.sleep = params[:value]
+
+    end
+    @observation.save
+    # saveが出来たかを確認するためにレンダーで呼び出す様にしておく。エラーであればこれが返ってこない
+    render json: { result: 'SUCCESS', col: params[:col], value: params[:value] }
   end
 
   private

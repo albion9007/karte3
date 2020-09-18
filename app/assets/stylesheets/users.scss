@@ -43,7 +43,7 @@
   //background: #222;
   //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
   min-height: 10rem;
-  margin: auto;
+  margin: 300px auto 0px;
   max-width: 50%;
   padding: .8rem;
 }
@@ -125,7 +125,7 @@
   position: fixed;
   top: 0;
 }
-.underlay-photo {
+.underlay-logout-photo {
   animation: hue-rotate 6s infinite;
   background: url('夕暮れ.jpg');
   background-size: cover;
@@ -133,5 +133,14 @@
   z-index: -1;
 }
 .underlay-black {
+  z-index: -1;
+}
+
+
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('湖.webp');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
   z-index: -1;
 }
