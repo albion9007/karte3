@@ -36,7 +36,7 @@
   <div class="login-form">
     <p class="login-text">
       <%= link_to "finish the work", destroy_user_session_path, method: :delete, class: 'login-submit'%>
-      <%= link_to "病棟へ戻る", :back, class: 'login-submit'%>
+      <%= link_to "Back to the hospital", :back, class: 'login-submit'%>
     </p>
     <%= form_with model: current_user, local: true do |f|%>
     <div class='input-field'>

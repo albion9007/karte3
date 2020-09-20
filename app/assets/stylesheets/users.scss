@@ -144,3 +144,11 @@
   -webkit-filter: grayscale(30%);
   z-index: -1;
 }
+
+.underlay-new-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('新規登録ハワイ.jpg');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
