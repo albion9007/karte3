@@ -1,8 +1,11 @@
 <div class="observation-show">
   <div class="observation-box">
-  <%= line_chart [{name: "体温", data: @data.compact}], width: "800px", height: "500px", min: 33, max:42  %>
-  <%= line_chart [{name: "脈拍", data: @data2.compact}], width: "800px", height: "500px", min: 40, max:130 %>
-  <%= line_chart [{name: "呼吸数", data: @data3.compact}], width: "800px", height: "500px", min: 10, max:30 %>
+  <h3>体温</h3>
+  <%= line_chart [{data: @data.compact}], id: "temperature-chart", width: "800px", height: "500px", min: 33, max:42  %>
+  <h3>脈拍数</h3>
+  <%= line_chart [{data: @data.compact}], id: "pulse-chart", width: "800px", height: "500px", min: 40, max:130 %>
+  <h3>呼吸数</h3>
+  <%= line_chart [{data: @data.compact}], id: "respiration-chart", width: "800px", height: "500px", min: 10, max:30 %>
   <%= line_chart [{name: "最高血圧", data: @data4.compact}], width: "800px", height: "500px", min: 50, max:300 %>
   <%= line_chart [{name: "最低血圧", data: @data5.compact}], width: "800px", height: "500px", min: 20, max:120 %>
   <table class="observation-show-table">

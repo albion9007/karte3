@@ -52,6 +52,8 @@ class ObservationsController < ApplicationController
   end
 # ajaxから呼び出されるためのアクションを設定する
   def partial_update
+    # dataを初期化
+    data = []
     # ajaxで指定されたカラムを更新する
     # colで指定されたカラムをvalueで指定された値に更新する
     if params[:col] == 'temperature'
@@ -72,11 +74,35 @@ class ObservationsController < ApplicationController
       @observation.water_intake = params[:value]
     elsif params[:col] == 'sleep'
       @observation.sleep = params[:value]
-
     end
     @observation.save
-    # saveが出来たかを確認するためにレンダーで呼び出す様にしておく。エラーであればこれが返ってこない
-    render json: { result: 'SUCCESS', col: params[:col], value: params[:value] }
+    # データ更新後のObservationを取得
+    observations = Observation.where(patient_id: params[:patient_id]).to_a
+    # 時間を整数として、数字が若い順で並べている
+    @observations = observations.sort_by { |o| o.time.delete(':').to_i }
+    # もしtemperatureが指定されたらdataと言う変数に、最新のtemperatureのデータを格納する処理
+    if params[:col] == 'temperature'
+      data = @observations.map do |o|
+        # 時間が有っても体温の入力が無い場合は無視される（if o.temperature.present?）
+        [o.time, o.temperature] if o.temperature.present?
+      end
+      name = '体温'
+    end
+
+    if params[:col] == 'pulse'
+      data = @observations.map do |o|
+        [o.time, o.pulse] if o.pulse.present?
+      end
+      name = '脈拍'
+    end
+
+    if params[:col] == 'respiration'
+      data = @observations.map do |o|
+        [o.time, o.respiration] if o.respiration.present?
+      end
+      name = '呼吸数'
+    end
+    render json: { result: 'SUCCESS', chart_data: data.compact  }
   end
 
   private
