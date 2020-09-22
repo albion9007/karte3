@@ -12,7 +12,7 @@ class Patient < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :name
-    validates :p_num
+    validates :gender
     validates :prefecture_id, numericality: { greater_than: 1, message: 'Select' }
     validates :main_disease
     validates :main_doctor

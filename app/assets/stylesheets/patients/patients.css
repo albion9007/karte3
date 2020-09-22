@@ -1,12 +1,10 @@
 .wrapper {
   display: flex;
-  /* font-family: 'Open Sans'; */
 }
 
 .side-task {
   height: 100vh;
   width: 300px;
-  /* background-color: #ffffff00; */
 }
 
 .side-task-header {
@@ -43,7 +41,6 @@
 }
 
 .patient-img {
-  /* margin-right: 20px; */
   height: 150px;
   width: 150px;
   object-fit: contain;
@@ -74,7 +71,6 @@
 }
 
 .word-patients {
-  /* background-color: #FAFAFA; */
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;

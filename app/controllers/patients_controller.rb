@@ -35,7 +35,7 @@ class PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:p_num, :image, :name, :birth_date, :post_num, :prefecture_id, :city,
+    params.require(:patient).permit(:image, :name, :gender, :birth_date, :post_num, :prefecture_id, :city,
                                     :house_num, :apart_name, :tel, :key_person, :kp_tel, :main_disease, :sub_disease, :main_doctor).merge(user_id: current_user.id)
   end
 

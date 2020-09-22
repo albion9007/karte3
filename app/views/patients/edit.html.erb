@@ -10,8 +10,8 @@
           クリックして患者様の画像ファイルをアップロードして下さい
       </p>
         <%= f.file_field :image, id:"patient-image" %>
-        <%= f.text_field :p_num, class:"patient-edit-info", id:"p_num", placeholder:"Patient ID", maxlength:"20" %>
         <%= f.text_field :name, class:"patient-edit-info", id:"patient-name", autofocus: true, placeholder:"Patient Name", maxlength:"20" %>
+        <%= f.select :gender, {'Select Gender':'', '男性': '男性', '女性': '女性' }, {}, {class:"patient-edit-info", id:"patient-gender" } %>
         <div class="form-group">
         <div class='form-text-wrap'>
         <label class="form-text">Birthday of the Patient</label>
@@ -60,10 +60,11 @@
           はなるべく入力して下さい。
         </p>
       </div>
-
       </div>
-    <%= f.submit "Register new Patient", class: 'patient-edit-submit' %>
-    <%=link_to 'Back to the hospital', root_path, class:"patient-edit-submit" %>
+    <%= f.submit "Change Patient Info", class: 'patient-edit-submit' %>
+    <p class="login-text">
+    <%=link_to "Back to the hospital", root_path, class:'patient-edit-submit' %>
+    </p>
     <% end %>
   </div>
   <div class="underlay-edit-patient-photo"></div>
