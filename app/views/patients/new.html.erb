@@ -236,9 +236,11 @@
 
       </div>
     <%= f.submit "Register new Patient", class: 'login-submit' %>
-    <%=link_to 'Back to the hospital', root_path, class:"login-submit" %>
     <% end %>
   </div>
+  <p class="login-text">
+  <%=link_to "Back to the hospital", root_path, class:'login-submit' %>
+  </p>
   <div class="underlay-new-patient-photo"></div>
   <div class="underlay-black"></div>
 </div>

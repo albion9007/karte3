@@ -1,39 +1,35 @@
 .wrapper {
   display: flex;
+  /* font-family: 'Open Sans'; */
 }
 
 .side-task {
   height: 100vh;
   width: 300px;
-  background-color: #ffffff00;
+  /* background-color: #ffffff00; */
 }
 
 .side-task-header {
   height: 100px;
-  background-color: #0adef18a;
+  background-color: #ffffff42;
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.header-name a {
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #22020f;
-  text-decoration: none;
+.name-button {
 }
 
 .create-to_do_list {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 .create-to_do_list a {
-  color: rgba(55, 4, 240, 0.856);
+  color: rgba(253, 253, 253, 0.657);
   border: 5px solid rgba(22, 104, 212, 0.692);
-  background-color: #f7f8f836;
+  /* background-color: #f7f8f836; */
   padding: 14px;
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -41,7 +37,7 @@
 
 .to_do_list {
   height: calc(100vh - 100px);
-  background-color: #0ad6f13d;
+  background-color: #ffffff42;
   padding: 0 20px;
   overflow: scroll;
 }
@@ -58,48 +54,27 @@
 }
 
 .list-name a {
-  color: rgb(5, 83, 51);
+  color: rgba(0, 0, 0, 0.822);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .word-info {
-  background-color: #0ad6f13d;
   width: calc(100% - 300px);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+  font-family: 'Open Sans';
 }
 
 .word-header {
   height: 100px;
   padding: 0 40px;
   display: flex;
-  justify-content: space-between;
-}
-
-.header-title {
-  color: #333;
-  font-size: 24px;
-  margin-top: 36px;
-}
-
-.header-button {
-  margin-top: 35px;
-}
-
-.header-button a {
-  text-decoration: none;
-  font-size: 30px;
-  font-family: monospace;
-  border: 1px solid rgb(230, 148, 148);
-  background-color: floralwhite;
-  color: rgb(230, 148, 148);
-  padding: 20px;
+  justify-content: space-around;
 }
 
 .word-patients {
-  background-color: #FAFAFA;
+  /* background-color: #FAFAFA; */
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0;
   overflow: scroll;
@@ -109,14 +84,79 @@
 }
 
 .room {
-  margin-top: 40px;
+  margin-top: 200px;
 }
 
 .room a {
-  text-decoration: none;
-  border: 1px solid rgb(48, 172, 23);
-  color: rgb(8, 117, 57);
-  padding: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px;
+  padding: 0.5em 1em;
+  color: rgb(250, 250, 250);background: -moz-linear-gradient(#38a9e285, #1310afb6);
+  background: -webkit-linear-gradient(#38a9e285, #1310afb6);
+  background: linear-gradient(to right, #38a9e285, #1310afb6);
+  border-radius: 10px;
+}
+
+.room b {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px;
+  padding: 0.5em 1em;
+  color: rgb(250, 250, 250);background: -moz-linear-gradient(#fa7ef085, #c300c3c9);
+  background: -webkit-linear-gradient(#fa7ef085, #c300c3c9);
+  background: linear-gradient(to right, #fa7ef085, #c300c3c9);
+  border-radius: 10px;
+}
+
+.patients-show-table {
+  width: 100vw;
+  height: 70%;
+  font-size: 30px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table.patients-show-table tr.patients-show-tr{
+  border-bottom: solid 2px white;
+}
+
+table.patients-show-table tr.patients-show-tr:last-child{
+  border-bottom: none;
+}
+
+table.patients-show-table th.patients-show-th{
+  position: relative;
+  text-align: left;
+  width: 10vw;
+  color: rgb(250, 250, 250);background: -moz-linear-gradient(#38a9e285, #1310afb6);
+  background: -webkit-linear-gradient(#38a9e285, #1310afb6);
+  background: linear-gradient(to right, #38a9e285, #1310afb6);
+  /* color: white; */
+  text-align: center;
+  padding: 10px 0;
+}
+
+table.patients-show-table th.patients-show-th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+table.patients-show-table td.patients-show-td{
+  text-align: left;
+  width: 80%;
+  text-align: center;
+  background-color: #ffffff42;
+  padding: 10px 0;
+  font-size: 50px;
 }
 
 div.word-patients div.left-patients div.room .more {
@@ -124,10 +164,6 @@ div.word-patients div.left-patients div.room .more {
   cursor: pointer;
   top: 20px;
   right: 30px;
-  z-index: 2;
-  height: 500px;
-  width: 80px;
-  text-align: right;
 }
 
 div.word-patients div.left-patients div.room .more:hover ul.more_list {
@@ -139,30 +175,16 @@ div.word-patients div.left-patients div.room .more ul.more_list {
   text-align: left;
   width: 250px;
   right: 0;
-  font-size: 12px;
-  background-color: #fff;
-  border: 1px solid #ddd;
   display: none;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-div.word-patients div.left-patients div.room .more ul.more_list li {
-  border-bottom: 1px solid #ddd;
-}
-
-div.word-patients div.left-patients div.room .more ul.more_list li:last-child {
-  border-bottom: 0;
 }
 
 div.word-patients div.left-patients div.room .more ul.more_list li a {
-  display: block;
-  padding: 5px;
+  padding: 0px;
 }
 
 div.word-patients div.left-patients div.room .more ul.more_list li a:hover {
-  background-color: #86cce6;
   color: rgb(14, 50, 136);
+  background-color: rgba(255, 255, 255, 0.472);
 }
 
 
@@ -188,7 +210,7 @@ div.word-patients div.right-patients div.room .more ul.more_list {
   width: 250px;
   right: 0;
   font-size: 12px;
-  background-color: #fff;
+  background-color: rgba(248, 116, 242, 0.192);
   border: 1px solid #ddd;
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -209,43 +231,7 @@ div.word-patients div.right-patients div.room .more ul.more_list li a {
 }
 
 div.word-patients div.right-patients div.room .more ul.more_list li a:hover {
-  background-color: #e7bce7;
+  /* background-color: #e7bce7; */
   color: rgb(117, 11, 94);
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
-}
-
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-}

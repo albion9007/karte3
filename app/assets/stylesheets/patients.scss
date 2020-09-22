@@ -153,8 +153,6 @@
 }
 
 
-
-
 [class*=underlay] {
   left: 0;
   min-height: 100%;
@@ -176,6 +174,14 @@
 .underlay-edit-patient-photo {
   animation: hue-rotate 6s infinite;
   background: url('桜晴れ.jpg');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}
+
+.underlay-index-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('緑.jpg');
   background-size: cover;
   -webkit-filter: grayscale(30%);
   z-index: -1;
