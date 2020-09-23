@@ -10,13 +10,10 @@
 .side-task-header {
   height: 100px;
   background-color: #ffffff42;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.name-button {
 }
 
 .create-to_do_list {
@@ -26,10 +23,6 @@
 
 .create-to_do_list a {
   color: rgba(253, 253, 253, 0.657);
-  border: 5px solid rgba(22, 104, 212, 0.692);
-  /* background-color: #f7f8f836; */
-  padding: 14px;
-  text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -41,8 +34,8 @@
 }
 
 .patient-img {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   object-fit: contain;
 }
 
@@ -105,7 +98,7 @@
   border-radius: 10px;
 }
 
-.patients-show-table {
+.patients-man-table {
   width: 100vw;
   height: 70%;
   font-size: 30px;
@@ -113,15 +106,15 @@
   table-layout: fixed;
 }
 
-table.patients-show-table tr.patients-show-tr{
+table.patients-man-table tr.patients-man-tr{
   border-bottom: solid 2px white;
 }
 
-table.patients-show-table tr.patients-show-tr:last-child{
+table.patients-man-table tr.patients-man-tr:last-child{
   border-bottom: none;
 }
 
-table.patients-show-table th.patients-show-th{
+table.patients-man-table th.patients-man-th{
   position: relative;
   text-align: left;
   width: 10vw;
@@ -133,7 +126,7 @@ table.patients-show-table th.patients-show-th{
   padding: 10px 0;
 }
 
-table.patients-show-table th.patients-show-th:after{
+table.patients-man-table th.patients-man-th:after{
   display: block;
   content: "";
   width: 0px;
@@ -146,7 +139,57 @@ table.patients-show-table th.patients-show-th:after{
   border-bottom: 10px solid transparent;
 }
 
-table.patients-show-table td.patients-show-td{
+table.patients-man-table td.patients-man-td{
+  text-align: left;
+  width: 80%;
+  text-align: center;
+  background-color: #ffffff42;
+  padding: 10px 0;
+  font-size: 50px;
+}
+
+.patients-woman-table {
+  width: 100vw;
+  height: 70%;
+  font-size: 30px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table.patients-woman-table tr.patients-woman-tr{
+  border-bottom: solid 2px white;
+}
+
+table.patients-woman-table tr.patients-woman-tr:last-child{
+  border-bottom: none;
+}
+
+table.patients-woman-table th.patients-woman-th{
+  position: relative;
+  text-align: left;
+  width: 10vw;
+  color: rgb(250, 250, 250);background: -moz-linear-gradient(#fa7ef085, #c300c3c9);
+  background: -webkit-linear-gradient(#fa7ef085, #c300c3c9);
+  background: linear-gradient(to right, #fa7ef085, #c300c3c9);
+  /* color: white; */
+  text-align: center;
+  padding: 10px 0;
+}
+
+table.patients-woman-table th.patients-woman-th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+table.patients-woman-table td.patients-woman-td{
   text-align: left;
   width: 80%;
   text-align: center;
@@ -205,29 +248,14 @@ div.word-patients div.right-patients div.room .more ul.more_list {
   text-align: left;
   width: 250px;
   right: 0;
-  font-size: 12px;
-  background-color: rgba(248, 116, 242, 0.192);
-  border: 1px solid #ddd;
   display: none;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-div.word-patients div.right-patients div.room .more ul.more_list li {
-  border-bottom: 1px solid #ddd;
-}
-
-div.word-patients div.right-patients div.room .more ul.more_list li:last-child {
-  border-bottom: 0;
 }
 
 div.word-patients div.right-patients div.room .more ul.more_list li a {
-  display: block;
-  padding: 5px;
+  padding: 0px;
 }
 
 div.word-patients div.right-patients div.room .more ul.more_list li a:hover {
-  /* background-color: #e7bce7; */
-  color: rgb(117, 11, 94);
+  color: #c001c0;
 }
 

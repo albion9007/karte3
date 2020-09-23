@@ -5,7 +5,8 @@ class PatientsController < ApplicationController
   end
 
   def index
-    @patients = Patient.all.order('created_at DESC')
+    @patients_man = Patient.where(gender: '男性').all.order('created_at DESC')
+    @patients_woman = Patient.where(gender: '女性').all.order('created_at DESC')
   end
 
   def create
@@ -27,9 +28,7 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    if @patient.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @patient.destroy
   end
 
   private

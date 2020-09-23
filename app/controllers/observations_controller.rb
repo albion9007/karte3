@@ -2,7 +2,7 @@ class ObservationsController < ApplicationController
   before_action :set_patient, only: [:new, :create, :edit, :update, :partial_update]
   before_action :set_observation, only: [:edit, :update, :partial_update]
   # railsのデフォルトCSRF対策を外す
-  protect_from_forgery :except => [:partial_update]
+  protect_from_forgery except: [:partial_update]
 
   def new
     @observation = Observation.new
@@ -10,7 +10,7 @@ class ObservationsController < ApplicationController
 
   def create
     @observation = Observation.new(observation_params)
-    if @observation.save  # バリデーションをクリアした時
+    if @observation.save # バリデーションをクリアした時
       redirect_to patient_path(@patient)
     else
       render :new # バリデーションに弾かれた時
@@ -50,7 +50,8 @@ class ObservationsController < ApplicationController
       render :edit # バリデーションに弾かれた時
     end
   end
-# ajaxから呼び出されるためのアクションを設定する
+
+  # ajaxから呼び出されるためのアクションを設定する
   def partial_update
     # dataを初期化
     data = []
@@ -102,7 +103,7 @@ class ObservationsController < ApplicationController
       end
       name = '呼吸数'
     end
-    render json: { result: 'SUCCESS', chart_data: data.compact  }
+    render json: { result: 'SUCCESS', chart_data: data.compact }
   end
 
   private

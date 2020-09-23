@@ -186,3 +186,11 @@
   -webkit-filter: grayscale(30%);
   z-index: -1;
 }
+
+.underlay-patient-show-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('青花畑.jpg');
+  background-size: cover;
+  -webkit-filter: grayscale(30%);
+  z-index: -1;
+}

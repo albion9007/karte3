@@ -29,23 +29,23 @@
         <%# <病室内患者様一覧> %>
         <ul class="more_list">
           <li>
-          <% @patients.each do |patient| %>
+          <% @patients_man.each do |patient| %>
           <%= link_to patient_path(patient.id) do %>
-            <table class="patients-show-table">
+            <table class="patients-man-table">
               <tbody>
-              <tr class="patients-show-tr">
-                <th class="patients-show-th">Picture</th>
-                <th class="patients-show-th">Name</th>
-                <th class="patients-show-th">Main Disease</th>
-                <th class="patients-show-th">Sub Disease</th>
-                <th class="patients-show-th">Main Doctor</th>
+              <tr class="patients-man-tr">
+                <th class="patients-man-th">Picture</th>
+                <th class="patients-man-th">Name</th>
+                <th class="patients-man-th">Main Disease</th>
+                <th class="patients-man-th">Sub Disease</th>
+                <th class="patients-man-th">Main Doctor</th>
               </tr>
-              <tr class="patients-show-tr">
-                <td class="patients-show-td"><%= image_tag patient.image, class:"patient-img"%></td>
-                <td class="patients-show-td"><%= patient.name %></td>
-                <td class="patients-show-td"><%= patient.main_disease %></td>
-                <td class="patients-show-td"><%= patient.sub_disease %></td>
-                <td class="patients-show-td"><%= patient.main_doctor %></td>
+              <tr class="patients-man-tr">
+                <td class="patients-man-td"><%= image_tag patient.image, class:"patient-img"%></td>
+                <td class="patients-man-td"><%= patient.name %></td>
+                <td class="patients-man-td"><%= patient.main_disease %></td>
+                <td class="patients-man-td"><%= patient.sub_disease %></td>
+                <td class="patients-man-td"><%= patient.main_doctor %></td>
               </tr>
               </tbody>
             </table>
@@ -59,16 +59,31 @@
   <div class="right-patients">
     <div class="room">
       <div class="more">
-        <b href="#">303</b>
+        <b>303</b>
         <ul class="more_list">
           <li>
-            <%= link_to '山本花子 72歳 主：肺炎 既：リウマチ' %>
-          </li>
-          <li>
-            <%= link_to '岡田順子 85歳 主：肺炎 既：心不全' %>
-          </li>
-          <li>
-            <%= link_to '加藤優子 78歳 主：肺炎 既：右大腿骨骨折' %>
+          <% @patients_woman.each do |patient| %>
+          <%= link_to patient_path(patient.id) do %>
+            <table class="patients-woman-table">
+              <tbody>
+              <tr class="patients-woman-tr">
+                <th class="patients-woman-th">Picture</th>
+                <th class="patients-woman-th">Name</th>
+                <th class="patients-woman-th">Main Disease</th>
+                <th class="patients-woman-th">Sub Disease</th>
+                <th class="patients-woman-th">Main Doctor</th>
+              </tr>
+              <tr class="patients-woman-tr">
+                <td class="patients-woman-td"><%= image_tag patient.image, class:"patient-img"%></td>
+                <td class="patients-woman-td"><%= patient.name %></td>
+                <td class="patients-woman-td"><%= patient.main_disease %></td>
+                <td class="patients-woman-td"><%= patient.sub_disease %></td>
+                <td class="patients-woman-td"><%= patient.main_doctor %></td>
+              </tr>
+              </tbody>
+            </table>
+          <% end %>
+          <% end %>
           </li>
         </ul>
       </div>
