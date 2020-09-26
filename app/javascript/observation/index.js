@@ -3,10 +3,27 @@ $(function(){
 
   // nyu-ryokuクラスのものが非表示になる
   $('.nyu-ryoku').hide()
+  // add-timeクラスがクリックされたときの処理を付与する
+  $('.add-time').on('click', function () {
+    // ダイアログを呼び出し、timeにデータを入力する。
+    const time = window.prompt("時間を入力してください", "")
+    // 新しいtimeの空のobservationのデータを作成し、各値を入力可能にする。
+    $.ajax(`/patients/${$(this).data('patient_id')}/observations/create_empty_data`, {
+      type: 'put',
+      // timeにはダイアログで入力した文字列が格納されているので、timeは空ではありません。
+      data: {
+        time
+      }
+    }).done(function() {
+      // 現在の URL を再読み込みする。
+      location.reload()
+    })
+  });
   // hyoujiクラスがクリックされたときの処理を付与する
   $('.hyouji').on('click', function () {
     // this(hyoujiクラスがクリックされたときの処理)がされた時にnyu-ryokuクラスのものがフォーム上に表示される
     $(this).siblings('.nyu-ryoku').show()
+    $(this).siblings('.nyu-ryoku').trigger('focus')
     // this(hyoujiクラスがクリックされたときの処理)がされた時にnyu-ryokuクラスの表示されていたものが隠れる
     $(this).hide()
     // つまり、$(this).siblings('.nyu-ryoku').show()と、$(this).hide()が同時に行われている。

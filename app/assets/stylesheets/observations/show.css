@@ -8,6 +8,12 @@
   padding: 5vh 0;
 }
 
+.vital-signs-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0c08ce;
+}
+
 .observation-box {
   background-color: rgb(234, 247, 248);
   width: 90vw;

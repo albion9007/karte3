@@ -21,6 +21,11 @@
   font-size: 25px;
 }
 
+.hyouji {
+  min-width: 50px;
+  min-height: 30px;
+}
+
 .patient-box-img {
   height: 50vh;
   width: 60vw;

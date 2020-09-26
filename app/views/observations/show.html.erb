@@ -1,17 +1,21 @@
 <div class="observation-show">
   <div class="observation-box">
-  <h3>体温</h3>
-  <%= line_chart [{data: @data.compact}], id: "temperature-chart", width: "800px", height: "500px", min: 33, max:42  %>
-  <h3>脈拍数</h3>
-  <%= line_chart [{data: @data.compact}], id: "pulse-chart", width: "800px", height: "500px", min: 40, max:130 %>
-  <h3>呼吸数</h3>
-  <%= line_chart [{data: @data.compact}], id: "respiration-chart", width: "800px", height: "500px", min: 10, max:30 %>
-  <%= line_chart [{name: "最高血圧", data: @data4.compact}], width: "800px", height: "500px", min: 50, max:300 %>
-  <%= line_chart [{name: "最低血圧", data: @data5.compact}], width: "800px", height: "500px", min: 20, max:120 %>
+  <div class="vital-signs-name">体温の経過</div>
+  <%= line_chart @data.compact, id: "temperature-chart", width: "800px", height: "500px", min: 33, max:42  %>
+  <div class="vital-signs-name">脈拍数の経過</div>
+  <%= line_chart @data2.compact, id: "pulse-chart", width: "800px", height: "500px", min: 33, max:42  %>
+  <div class="vital-signs-name">呼吸数の経過</div>
+  <%= line_chart @data3.compact, id: "respiration-chart", width: "800px", height: "500px", min: 33, max:42  %>
+  <div class="vital-signs-name">最高血圧の経過</div>
+  <%= line_chart @data4.compact, id: "high_blood_pressure-chart", width: "800px", height: "500px", min: 33, max:42  %>
+  <div class="vital-signs-name">最低血圧の経過</div>
+  <%= line_chart @data5.compact, id: "low_blood_pressure-chart", width: "800px", height: "500px", min: 33, max:42  %>
   <table class="observation-show-table">
     <tbody>
     <tr class="observation-tr">
-      <th class="observation-th">観察時間</th>
+      <th class="observation-th">観察時間  
+      <%# <%# add-timeクラスを付与してjsへ渡す。ajaxへデータを渡すために、data-patient_id=を設定する？ %>
+      <button class="add-time" data-patient_id="<%= @patient.id %>">追加</button></th>
           <% @observations.map(&:time).each do |time| %>
           <td class="observation-td"><%= time %></td>
           <% end %>
