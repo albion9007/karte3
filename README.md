@@ -195,9 +195,12 @@ PASS:0416
 | Column   | Type     | Options                        |
 | -------- | --------  | ------------------------------ |
 | patient_id  | references  | null: false, foreign_key: true |
+| user_id  | references  | null: false, foreign_key: true |
 | time         | string    | null: false |
 | test         | string    |
 | medicine         | string    |
+| injection         | string    |
+
 
 ### Association
 - belongs_to :patients

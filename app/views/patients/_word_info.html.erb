@@ -1,15 +1,20 @@
 <div class="word-header">
   <div class="left-header">
     <div class="header-title">
-    3階病棟マップ
+        <%= link_to current_user.name , edit_user_path(current_user), class:"btn btn-malformation btn-malformation--pastel" %>
+    </div>
+  </div>
+  <div class="center-header">
+    <div class="header-button">
+      <a href="#", class="btn btn-malformation btn-malformation--pastel">help</a>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
       <% if user_signed_in? %>
-        <%= link_to "新規入院", new_patient_path, class: "header-button" %>
+        <%= link_to "新規入院", new_patient_path, class:"btn btn-malformation btn-malformation--pastel" %>
       <% else %>
-        <%= link_to "新規入院", new_session_path(resource_name), class: "header-button" %>
+        <%= link_to "新規入院", new_session_path(resource_name), class:"btn btn-malformation btn-malformation--pastel" %>
       <% end %>
     </div>
   </div>
@@ -20,34 +25,32 @@
   <div class="left-patients">
     <div class="room">
       <div class="more">
-        <a href="#">301</a>
-        <%# <select>
-        <%# <option value="">301</option> %>
-        <%# <% Patient.all.each do |patient| %> 
-        <%# <option><%= patient.name</option> %> 
-        <%# <% end %> 
-        <%# </select> %> 
+        <a>301</a>
         <%# <病室内患者様一覧> %>
         <ul class="more_list">
-        <% @patients.each do |patient| %>
+          <li>
+          <% @patients_man.each do |patient| %>
           <%= link_to patient_path(patient.id) do %>
-          <li>
-          <%= image_tag patient.image, class:"patient-img"%>
-          <%= patient.name %>
-          <%= patient.main_disease %>
-          <%= patient.sub_disease %>
-          <%= patient.main_doctor %>
-          </li>
-          <% end  %>
+            <table class="patients-man-table">
+              <tbody>
+              <tr class="patients-man-tr">
+                <th class="patients-man-th">Picture</th>
+                <th class="patients-man-th">Name</th>
+                <th class="patients-man-th">Main Disease</th>
+                <th class="patients-man-th">Sub Disease</th>
+                <th class="patients-man-th">Main Doctor</th>
+              </tr>
+              <tr class="patients-man-tr">
+                <td class="patients-man-td"><%= image_tag patient.image, class:"patient-img"%></td>
+                <td class="patients-man-td"><%= patient.name %></td>
+                <td class="patients-man-td"><%= patient.main_disease %></td>
+                <td class="patients-man-td"><%= patient.sub_disease %></td>
+                <td class="patients-man-td"><%= patient.main_doctor %></td>
+              </tr>
+              </tbody>
+            </table>
           <% end %>
-          <li>
-            <%= link_to '太田聡介 74歳 肺炎 既：胃癌手術' %>
-          </li>
-          <li>
-            <%= link_to '石川直幸 81歳 肺炎 既：くも膜下出血' %>
-          </li>
-          <li>
-            <%= link_to '小林翔太 77歳 肺炎 既：COPD' %>
+          <% end %>
           </li>
         </ul>
       </div>
@@ -56,16 +59,31 @@
   <div class="right-patients">
     <div class="room">
       <div class="more">
-        <a href="#">303</a>
+        <b>303</b>
         <ul class="more_list">
           <li>
-            <%= link_to '山本花子 72歳 主：肺炎 既：リウマチ' %>
-          </li>
-          <li>
-            <%= link_to '岡田順子 85歳 主：肺炎 既：心不全' %>
-          </li>
-          <li>
-            <%= link_to '加藤優子 78歳 主：肺炎 既：右大腿骨骨折' %>
+          <% @patients_woman.each do |patient| %>
+          <%= link_to patient_path(patient.id) do %>
+            <table class="patients-woman-table">
+              <tbody>
+              <tr class="patients-woman-tr">
+                <th class="patients-woman-th">Picture</th>
+                <th class="patients-woman-th">Name</th>
+                <th class="patients-woman-th">Main Disease</th>
+                <th class="patients-woman-th">Sub Disease</th>
+                <th class="patients-woman-th">Main Doctor</th>
+              </tr>
+              <tr class="patients-woman-tr">
+                <td class="patients-woman-td"><%= image_tag patient.image, class:"patient-img"%></td>
+                <td class="patients-woman-td"><%= patient.name %></td>
+                <td class="patients-woman-td"><%= patient.main_disease %></td>
+                <td class="patients-woman-td"><%= patient.sub_disease %></td>
+                <td class="patients-woman-td"><%= patient.main_doctor %></td>
+              </tr>
+              </tbody>
+            </table>
+          <% end %>
+          <% end %>
           </li>
         </ul>
       </div>

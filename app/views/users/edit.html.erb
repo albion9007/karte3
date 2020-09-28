@@ -1,33 +1,17 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>職員情報の変更</h2>
-      <h5>アカウントの編集</h5>
-      <%= link_to "finish the work", destroy_user_session_path, method: :delete, class: 'btn'%>
-      <%= link_to "病棟へ戻る", :back, class: 'btn'%>
+<div class="login-view">
+  <div class="login-form">
+    <p class="login-text">
+      <%= link_to "finish the work", destroy_user_session_path, method: :delete, class: 'login-submit'%>
+      <%= link_to "Back to the hospital", :back, class: 'login-submit'%>
+    </p>
+    <%= form_with model: current_user, local: true do |f|%>
+    <div class='input-field'>
+      <%= f.text_field :name, class:"login-username", autofocus: true, placeholder:"Name" %>
+      <%= f.email_field :email, class:"login-username", autofocus: true, placeholder:"Email" %>
     </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :名前%>
-          </div>
-          <div class='field-input'>
-            <%= f.text_field :name, autofocus: true%>
-          </div>
-        </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email%>
-          </div>
-        </div>
-        <div class='actions'>
-          <%= f.submit "変更する", class: 'btn'%>
-        </div>
-      <% end %>
-    </div>
+    <%= f.submit "Change your account", class: 'login-submit' %>
+    <% end %>
   </div>
+  <div class="underlay-logout-photo"></div>
+  <div class="underlay-black"></div>
 </div>

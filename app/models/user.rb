@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name, uniqueness: { case_sensitive: true }, length: { maximum: 15 }
-    PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-    validates_format_of :password, with: PASSWORD_REGEX, message: ''
   end
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, on: :create, message: ''
 end

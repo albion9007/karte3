@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_133829) do
+ActiveRecord::Schema.define(version: 2020_09_26_092225) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,8 +54,9 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "time", null: false
-    t.string "hainyou", null: false
     t.string "user_name", null: false
+    t.string "hainyou"
+    t.date "date", default: "2020-01-01", null: false
     t.index ["patient_id"], name: "index_observations_on_patient_id"
     t.index ["user_id"], name: "index_observations_on_user_id"
   end
@@ -70,7 +71,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "p_num", null: false
     t.string "name", null: false
     t.datetime "birth_date"
     t.string "tel", default: ""
@@ -87,7 +87,21 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "gender", null: false
     t.index ["user_id"], name: "index_patients_on_user_id"
+  end
+
+  create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "time", null: false
+    t.string "test"
+    t.string "medicine"
+    t.string "injection"
+    t.bigint "patient_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_treatments_on_patient_id"
+    t.index ["user_id"], name: "index_treatments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,4 +123,6 @@ ActiveRecord::Schema.define(version: 2020_09_09_133829) do
   add_foreign_key "patient_users", "patients"
   add_foreign_key "patient_users", "users"
   add_foreign_key "patients", "users"
+  add_foreign_key "treatments", "patients"
+  add_foreign_key "treatments", "users"
 end

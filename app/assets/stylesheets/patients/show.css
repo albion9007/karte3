@@ -1,5 +1,4 @@
 .patient-show {
-  background-color: #c6eff3;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,6 @@
 }
 
 .patient-box {
-  background-color: rgb(232, 248, 250);
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 15vw;
@@ -23,12 +21,17 @@
   font-size: 25px;
 }
 
+.hyouji {
+  min-width: 50px;
+  min-height: 30px;
+}
+
 .patient-box-img {
   height: 50vh;
   width: 60vw;
   min-height: 500px;
-  background-color: rgb(205, 202, 202);
   object-fit: contain;
+  border-radius: 20px;
 }
 
 .patient-disease-box {

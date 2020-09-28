@@ -139,8 +139,9 @@
   padding-left: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  background: #fff;
+  /* background: #fff; */
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -173,8 +174,27 @@
   padding: 5vh 0;
 }
 
+.sentence {
+  color: snow;
+  font-size: large;
+  text-decoration: none;
+}
+.pt-sentence {
+  color: rgb(0, 0, 0);
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .sentence>a {
-  color: #2b3de6;
+  color: #e62bae;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.pt-sentence>a {
+  color: #e62bae;
+  font-weight: bold;
   text-decoration: none;
 }
 /* /注意書き */
