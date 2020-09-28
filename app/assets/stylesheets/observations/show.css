@@ -9,9 +9,13 @@
 }
 
 .vital-signs-name {
-  font-size: 18px;
-  font-weight: 800;
-  color: #0c08ce;
+  color: #52c2d0;
+  font-size: 25px;
+  font-weight: bold;
+  border: solid 2px;
+  background-color: floralwhite;
+  border-color:  #52c2d0;
+  border-radius: 15px;
 }
 
 .observation-box {
@@ -24,6 +28,48 @@
   align-items: center;
 }
 
+.observation_date {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  color: ;
+}
+
+.beforeday {
+  color: darkcyan;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-color: darkcyan;
+  border-radius: 20px;
+}
+
+.nextday {
+  color: rgb(156, 7, 161);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-color: rgb(156, 7, 161);
+  border-radius: 20px;
+}
+
+.add-time {
+  color: rgb(246, 104, 9);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-color: rgb(246, 104, 9);
+  border-radius: 20px;
+}
+
+.delete-time {
+  color: rgb(73, 105, 248);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-color:rgb(73, 105, 248));
+  border-radius: 20px;
+}
 
 .observation-show-table {
   margin-bottom: 50px;
@@ -97,6 +143,7 @@ table.observation-show-table td.observation-td{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: floralwhite;
 }
 
 .kensa-icon {
@@ -115,7 +162,7 @@ table.observation-show-table td.observation-td{
   justify-content: center;
   align-items: center;
   margin-left: 20px;
-
+  background-color: floralwhite;
 }
 
 .treatment-icon {

@@ -1,8 +1,8 @@
 class ObservationsController < ApplicationController
-  before_action :set_patient, only: [:show, :new, :create, :edit, :update, :partial_update, :create_empty_data]
-  before_action :set_observation, only: [:edit, :update, :partial_update]
+  before_action :set_patient, only: [:show, :new, :create, :edit, :update, :partial_update, :create_empty_data, :delete]
+  before_action :set_observation, only: [:edit, :update, :partial_update, :delete]
   # railsのデフォルトCSRF対策を外す
-  protect_from_forgery except: [:partial_update, :create_empty_data]
+  protect_from_forgery except: [:partial_update, :create_empty_data, :delete]
 
   def new
     @observation = Observation.new
@@ -18,7 +18,17 @@ class ObservationsController < ApplicationController
   end
 
   def show
-    observations = Observation.where(patient_id: params[:patient_id]).to_a
+    # URLパラメーターの中にdateが指定されているかの判定。
+    if params.has_key?(:date)
+      # URLパラメーターのdateで指定された日付の文字列をDate型に変換する（rubyのDate型）。
+      @date = Date.parse(params[:date])
+    else
+      # URLパラメーターの中にdateが指定されていない場合。
+      # maximumでpatientのobservationの中で最新のdateを取得する。最初に表示した時に最も新しいデータが表示される。
+      @date = Observation.maximum(:date)
+    end
+    # date: @dateで日付を指定してobservationsデータを取得する。
+    observations = Observation.where(patient_id: params[:patient_id], date: @date).to_a
     @observations = observations.sort_by { |o| o.time.delete(':').to_i }
     @data = @observations.map do |o|
       [o.time, o.temperature] if o.temperature.present?
@@ -52,10 +62,21 @@ class ObservationsController < ApplicationController
 
   # create_empty_dataを定義して、newとcreateアクションを作成する。
   def create_empty_data
-    # timeデータを生成して、保存出来る様にインスタンス変数を定義する
+    # timeデータを生成して、保存出来る様にインスタンス変数を定義する.
+    # jsで指定された18行目のdateを設定する。→date: params[:date]
     @observation = Observation.new({user_id: current_user.id, patient_id: params[:patient_id],
-       user_name: current_user.name, time: params[:time]})
-    @observation.save
+       user_name: current_user.name, time: params[:time], date: params[:date]})
+      #  バリデーションを実行する。
+    if @observation.invalid?
+      # バリデーションでエラーが発生した場合、以下をクライアントに返す。
+      # ・HTTPステータスの400
+      # ・json形式のエラーメッセージ
+      render status: 400, json: {
+        message: @observation.errors.full_messages[0]
+      }
+    else
+      @observation.save
+    end
   end
 
   # ajaxから呼び出されるためのアクションを設定する
@@ -82,6 +103,20 @@ class ObservationsController < ApplicationController
       @observation.water_intake = params[:value]
     elsif params[:col] == 'sleep'
       @observation.sleep = params[:value]
+    elsif params[:col] == 'excresion'
+      @observation.excresion = params[:value]
+    elsif params[:col] == 'ex_amount'
+      @observation.ex_amount = params[:value]
+    elsif params[:col] == 'hainyou'
+      @observation.hainyou = params[:value]
+    elsif params[:col] == 'atten_sound'
+      @observation.atten_sound = params[:value]
+    elsif params[:col] == 'atten_part'
+      @observation.atten_part = params[:value]
+    elsif params[:col] == 'sputum'
+      @observation.sputum = params[:value]
+    elsif params[:col] == 'cough'
+      @observation.cough = params[:value]
     end
     @observation.save
     # データ更新後のObservationを取得
@@ -98,28 +133,28 @@ class ObservationsController < ApplicationController
     end
 
     if params[:col] == 'pulse'
-      data2 = @observations.map do |o|
+      data = @observations.map do |o|
         [o.time, o.pulse] if o.pulse.present?
       end
       name = '脈拍'
     end
 
     if params[:col] == 'respiration'
-      data3 = @observations.map do |o|
+      data = @observations.map do |o|
         [o.time, o.respiration] if o.respiration.present?
       end
       name = '呼吸数'
     end
 
     if params[:col] == 'high_blood_pressure'
-      data4 = @observations.map do |o|
+      data = @observations.map do |o|
         [o.time, o.high_blood_pressure] if o.high_blood_pressure.present?
       end
       name = '最高血圧'
     end
 
     if params[:col] == 'low_blood_pressure'
-      data5 = @observations.map do |o|
+      data = @observations.map do |o|
         [o.time, o.low_blood_pressure] if o.low_blood_pressure.present?
       end
       name = '最低血圧'
@@ -127,6 +162,10 @@ class ObservationsController < ApplicationController
     render json: { result: 'SUCCESS', chart_data: data.compact }
   end
 
+  def delete
+    @observation.destroy
+  end
+  
   private
 
   def observation_params
@@ -140,7 +179,6 @@ class ObservationsController < ApplicationController
   end
 
   def set_observation
-    # @observation = Observation.find(params[:patient_id])
     @observation = Observation.find(params[:id])
   end
 end

@@ -17,8 +17,7 @@
 
     <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
     <% if user_signed_in? %>
-    <%= link_to '観察記録を入力する', new_patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
-    <%= link_to '観察記録を参照する', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
+    <%= link_to '観察記録', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
     <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "btn btn-malformation btn-malformation--pastel" %>
     <p class='or-text'>or</p>
     <%= link_to '退院', patient_path, method: :delete, class:'btn btn-malformation btn-malformation--pastel' %>
@@ -34,6 +33,7 @@
         <span>ハラスメントの通報</span>
       </div>
     </div>
+    <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
   </div>
   <%# /商品の概要 %>
 
