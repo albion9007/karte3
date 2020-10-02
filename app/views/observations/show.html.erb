@@ -20,7 +20,7 @@
     <tbody>
     <tr class="observation-tr">
       <th class="observation-th">観察時間  
-      <%# <%# add-timeクラスを付与してjsへ渡す。ajaxへデータを渡すために、data-patient_id=を設定する？ %>
+      <%# add-timeクラスを付与してjsへ渡す。ajaxへデータを渡すために、data-patient_id=を設定する %>
       <button class="add-time" data-patient_id="<%= @patient.id %>" data-date="<%= @date %>">追加</button></th>
           <% @observations.each do |observation| %>
           <td class="observation-td">
@@ -231,7 +231,7 @@
   </table>
   <div class="observation-show-btn">
     <div class="kensa-btn">
-      <%= image_tag "レントゲン.jpeg" ,class:"kensa-icon" ,width:"40",height:"40"%>
+      <%# <%= image_tag "レントゲン.jpeg" ,class:"kensa-icon" ,width:"40",height:"40"%> %>
       <%= link_to "検査結果参照", '#' %>
     </div>
     <div class="syoti-btn">

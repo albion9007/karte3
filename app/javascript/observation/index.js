@@ -65,7 +65,7 @@ $(function(){
       data: {
         // col=どのカラムを更新するかを指定している
         col,
-        // value=更新する値をを指定している
+        // value=更新する値を指定している
         value: $(this).val()
       }
       // ajaxの処理に成功したらdoneの処理がされる

@@ -1,36 +1,52 @@
-<div class="observation-new">
-  <div class="item-box">
-    <%= form_with  model: [@patient,@treatment], local: true do |f| %>
-    <table class="detail-table">
+<div class="treatments-new">
+  <div class="treatments-box">
+    <table class="treatments-table">
       <tbody>
-      <tr>
-        <th>処置時間</th>
-        <td><%= f.text_field :time, maxlength: "5" %></td>
+      <tr class="treatments-tr">
+        <th class="treatments-th">処置時間
+        <button class="add-treat-time" data-patient_id="<%= @patient.id %>" >追加</button></th>
+          <% @treatments.each do |treatment| %>
+          <td class="treatment-td">
+            <%= treatment.time %>
+            <button class="delete-time" data-id="<%= treatment.id %>" data-patient_id="<%= @patient.id %>">削除</button>
+          </td>
+          <% end %>
       </tr>
-      <tr>
-        <th>検査</th>
-        <td><%= f.select :test, {'': '', '採血': '採血', '検尿': '検尿',
-        '採痰': '採痰', '胸部レントゲン': '胸部レントゲン', '胸部CT': '胸部CT',
-        '肺生検': '肺生検', '呼吸機能検査': '呼吸機能検査' } %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">検査</th>
+      <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.test %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= treatment.test %>" data-col="test" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>飲み薬</th>
-        <td>
-        <%= f.text_field :medicine, maxlength: "15" %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">飲み薬</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.medicine %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= treatment.medicine %>" data-col="medicine" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>注射</th>
-        <td>
-        <%= f.text_field :injection, maxlength: "15" %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">注射</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.injection %></div>
+            <input type="text" class="nyu-ryoku"  value="<%= treatment.injection %>" data-col="injection" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>指示を出す</th>
-        <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
+      <tr class="treatments-tr">
+        <th class="treatments-th">Dr.Name</th>
+        <% @treatments.map(&:user_name).each do |user_name| %>
+          <td class="treatment-td"><%= user_name %></td>
+        <% end %>
       </tr>
       </tbody>
     </table>
-    <% end %>
+  </div>
 </div>
+<%= javascript_pack_tag 'treatment/application' %>
