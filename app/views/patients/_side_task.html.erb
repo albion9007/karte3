@@ -2,42 +2,16 @@
 </div>
 
 <div class="to_do_list">
-    <div class="list">
-      <div class="list-name">
-        <a href="#">【本日の処置】</a>
-      </div>
-      <div class="list-name">
-        <a href="#">10時 注射(山本花子)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">10時 注射(岡田順子)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">10時 注射(鈴木福)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">10時30分 検査(太田聡介)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">11時 検査(加藤優子)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">11時 内服(石川直幸)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">12時 注射(小林翔太)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">14時 注射(太田聡介)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">14時 指導(太田聡介)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">16時 注射(山本花子)</a>
-      </div>
-      <div class="list-name">
-        <a href="#">16時 注射(鈴木福)</a>
-      </div>
-    </div>
+    <ul class="list">
+      <li class="list-name">
+        <p>【本日の処置】</p>
+        <% @treatments.each do |treatment| %>
+        <p>[<%= treatment.patient.name %>]</p>
+        <p><%= treatment.time %></p>
+        <p><%= treatment.test %></p>
+        <p><%= treatment.medicine %></p>
+        <p><%= treatment.injection %></p>
+        <% end %>
+      </li>
+    </ul>
 </div>

@@ -18,7 +18,7 @@ class Observation < ApplicationRecord
   end
 
   def exists_time
-    if Observation.where(date: date, time: time).count > 0
+    if Observation.where(patient_id: patient_id, date: date, time: time).count > 0
       # :timeはどの項目でエラーが起きているか確認。
       errors.add(:time, time + "は既に存在しています")
     end

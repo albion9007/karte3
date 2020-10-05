@@ -10,12 +10,47 @@
 
 .treatments-box {
   background-color:rgb(234, 247, 248);
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
+  width: 80vw;
+  min-width: 1500px;
+  padding: 5vh 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.treatment_patient-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh;
+}
+
+.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.treatment_patient-box-img {
+  height: 20vh;
+  width: 30vw;
+  min-height: 200px;
+  object-fit: contain;
+}
+
+.treatment_patient-disease-box {
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.treatment_patient-disease-box>.treatment_patient-main-disease {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.treatment_patient-disease-box>.treatment_patient-sub-disease {
+  font-size: 3vh;
 }
 
 .add-treat-time {
@@ -37,16 +72,15 @@
 }
 
 .treatments-table {
-  margin-bottom: 30px;
   width: 100%;
   height: 100%;
   font-size: 20px;
 }
 
-/* table{
+table{
   border-collapse: collapse;
   table-layout: fixed;
-} */
+}
 
 table.treatments-table tr.treatments-tr{
   border-bottom: solid 2px white;
@@ -85,4 +119,10 @@ table.treatments-table td.treatments-td{
   text-align: center;
   background-color: #eee;
   padding: 10px 0;
+}
+
+.link {
+  display: flex;
+  justify-content: space-around;
+  margin: 7vh 0;
 }

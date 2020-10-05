@@ -168,3 +168,41 @@ table.observation-show-table td.observation-td{
 .treatment-icon {
   margin-right: 5px;
 }
+
+/* .dialog {
+  overflow: hidden;
+  position: absolute;
+  top: 30%;
+  height: auto;
+  width: 300px;
+  display: none;
+  border:1px solid #aaa;
+  z-index:1000;
+}
+.dialog-header {
+  border: 1px solid #aaa;
+  background: #cccccc;
+  color: #222222;
+  font-weight: bold;
+  overflow: hidden;
+  padding:5px;
+}
+.dialog-title {
+  float: left;
+}
+.dialog-close {
+  float: right;
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6;
+  font-weight: normal;
+  color: #555555;
+}
+.dialog-content {
+  position: relative;
+  border: 0;
+  padding: .5em 1em;
+  background: #fff;
+  overflow: auto;
+  width: auto;
+  height: auto;
+} */

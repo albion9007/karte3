@@ -4,6 +4,13 @@ $(function(){
   $('.nyu-ryoku').hide()
   // add-timeクラスがクリックされたときの処理を付与する
   $('.add-time').on('click', function () {
+    // //leftの値 = (ウィンドウ幅 -コンテンツ幅) ÷ 2
+    // var leftPosition = (($(window).width() - $("#sample-dialog").outerWidth(true)) / 2);
+    // //CSSを変更
+    // $("#sample-dialog").css({"left": leftPosition + "px"});
+    // //ダイアログを表示する
+    // $("#sample-dialog").show();
+    // return
     // ダイアログを呼び出し、timeにデータを入力する。
     const time = window.prompt("時間を入力してください", "")
     if (!time) {
@@ -94,4 +101,13 @@ $(function(){
     // date.getMonth() + 1は1月が0月になるので、+1している。（月だけで、日はOK）。
     return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
   }
+  // $("#add-form").dialog({
+  //   autoOpen: false,
+  //   modal: true,
+  //   buttons: {
+  //     "OK": function() {
+  //       $(this).dialog("close")
+  //     }
+  //   }
+  // })
 })

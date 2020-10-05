@@ -1,4 +1,20 @@
 <div class="treatments-new">
+  <div class="treatment_patient-box">
+    <div class='patient-img-content'>
+      <%= image_tag @patient.image ,class:"treatment_patient-box-img" %>
+    </div>
+    <div class="treatment_patient-disease-box">
+      <div class="name">
+      患者様名:  <%= @patient.name %>
+      </div>
+      <span class="treatment_patient-main-disease">
+      主病名:  <%= @patient.main_disease %>
+      </span>
+      <span class="treatment_patient-sub-disease">
+      [既往歴]  <%= @patient.sub_disease %>
+      </span>
+    </div>
+   </div>
   <div class="treatments-box">
     <table class="treatments-table">
       <tbody>
@@ -13,11 +29,17 @@
           <% end %>
       </tr>
       <tr class="treatments-tr">
-        <th class="treatments-th">検査</th>
+        <th class="treatments-th">検査/退院</th>
       <% @treatments.each do |treatment| %>
         <td class="treatment-td">
             <div class="hyouji"><%= treatment.test %></div>
-            <input type="text" class="nyu-ryoku"  value="<%= treatment.test %>" data-col="test" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+            <select class="nyu-ryoku" data-col="test" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '胸部レントゲン': '胸部レントゲン', '胸部CT': '胸部CT',
+              '採血': '採血', '検尿': '検尿', 'MRI': 'MRI', 'PET-CT': 'PET-CT', '退院': '退院'} %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.test ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
         <% end %>
       </tr>
@@ -26,16 +48,28 @@
         <% @treatments.each do |treatment| %>
         <td class="treatment-td">
             <div class="hyouji"><%= treatment.medicine %></div>
-            <input type="text" class="nyu-ryoku"  value="<%= treatment.medicine %>" data-col="medicine" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+            <select class="nyu-ryoku" data-col="medicine" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '食後/抗生剤': '食後/抗生剤', '発熱時/解熱剤': '発熱時/解熱剤',
+              '嘔気時/制吐剤': '嘔気時/制吐剤', '胃痛時/胃薬': '胃痛時/胃薬', '食後/咳止め': '食後/咳止め', '食後/去痰薬': '食後/去痰薬'} %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.medicine ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
         <% end %>
       </tr>
       <tr class="treatments-tr">
-        <th class="treatments-th">注射</th>
+        <th class="treatments-th">注射/吸入薬</th>
         <% @treatments.each do |treatment| %>
         <td class="treatment-td">
             <div class="hyouji"><%= treatment.injection %></div>
-            <input type="text" class="nyu-ryoku"  value="<%= treatment.injection %>" data-col="injection" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+            <select class="nyu-ryoku" data-col="injection" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '抗生剤': '抗生剤', '発熱時/解熱剤': '発熱時/解熱剤',
+              '嘔気時/制吐剤': '嘔気時/制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬', 'ネブライザー': 'ネブライザー' } %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.injection ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
         <% end %>
       </tr>
@@ -47,6 +81,10 @@
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="link">
+    <%= link_to '観察記録へ戻る', '#',class:"btn btn-malformation btn-malformation--pastel" %>
+    <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
   </div>
 </div>
 <%= javascript_pack_tag 'treatment/application' %>
