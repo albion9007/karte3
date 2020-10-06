@@ -45,6 +45,9 @@ class ObservationsController < ApplicationController
     @data5 = @observations.map do |o|
       [o.time, o.low_blood_pressure] if o.low_blood_pressure.present?
     end
+
+    @users_position_doctor = 'Doctor'
+    
   end
 
   def edit

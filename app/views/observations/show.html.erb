@@ -233,10 +233,12 @@
     <div class="kensa-btn">
       <%= link_to "検査結果参照", '#' %>
     </div>
+    <% if user_signed_in? && current_user.position == @users_position_doctor %>
     <div class="syoti-btn">
       <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
       <%= link_to "処置の入力", new_patient_treatment_path %>
     </div>
+    <% end %>
     <div class="syoti-btn">
       <%= link_to "患者様ページへ戻る", patient_path(@patient.id) %>
     </div>
