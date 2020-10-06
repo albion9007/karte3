@@ -1,6 +1,6 @@
 class TreatmentsController < ApplicationController
-  before_action :set_patient, only: [:create_new_treatment_data, :new, :treat_partial_update, :create, :delete]
-  before_action :set_treatment, only: [:treat_partial_update, :delete]
+  before_action :set_patient, only: [:create_new_treatment_data, :new, :treat_partial_update, :create, :delete, :show]
+  before_action :set_treatment, only: [:treat_partial_update, :delete, :show]
   protect_from_forgery except: [:create_new_treatment_data, :treat_partial_update, :delete]
 
   def new
@@ -18,6 +18,11 @@ class TreatmentsController < ApplicationController
     end
   end
 
+  def show
+    treatments = Treatment.where(patient_id: params[:patient_id]).to_a
+    @treatments = treatments.sort_by { |t| t.time.delete(':').to_i }
+  end
+  
   def create_new_treatment_data
     @treatment = Treatment.new({user_id: current_user.id, patient_id: params[:patient_id],
       user_name: current_user.name, time: params[:time]})

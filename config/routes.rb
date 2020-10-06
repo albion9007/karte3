@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   delete 'patients/:patient_id/treatments/:id/delete', to: 'treatments#delete'
   resources :patients do
     resources :observations, only: [:new, :create, :edit, :show, :update]
-    resources :treatments, only: [:new, :create]
+    resources :treatments, only: [:new, :create, :show]
   end
 end

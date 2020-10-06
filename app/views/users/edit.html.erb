@@ -7,6 +7,7 @@
     <%= form_with model: current_user, local: true do |f|%>
     <div class='input-field'>
       <%= f.text_field :name, class:"login-username", autofocus: true, placeholder:"Name" %>
+      <%= f.select :position, {'Select Position':'', 'Doctor': 'Doctor', 'Nurse': 'Nurse' }, {}, {class:"login-username", id:"user-position"} %>
       <%= f.email_field :email, class:"login-username", autofocus: true, placeholder:"Email" %>
     </div>
     <%= f.submit "Change your account", class: 'login-submit' %>
