@@ -113,11 +113,11 @@ table.treatments-table th.treatments-th:after{
   border-bottom: 10px solid transparent;
 }
 
-table.treatments-table td.treatments-td{
+table.treatments-table td.treatment-td{
   text-align: left;
-  width: 80%;
+  width: 70%;
   text-align: center;
-  background-color: #eee;
+  background-color: rgb(232, 247, 250);
   padding: 10px 0;
 }
 

@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="observation-show">
   <div class="observation-box">
   <div class="vital-signs-name">体温の経過</div>
@@ -296,3 +297,4 @@
   </table>
 </div> %>
 <%= javascript_pack_tag 'observation/application'%>
+<% end %>

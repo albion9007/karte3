@@ -1,6 +1,6 @@
 class TreatmentsController < ApplicationController
   before_action :set_patient, only: [:create_new_treatment_data, :new, :treat_partial_update, :create, :delete, :show]
-  before_action :set_treatment, only: [:treat_partial_update, :delete, :show]
+  before_action :set_treatment, only: [:treat_partial_update, :delete]
   protect_from_forgery except: [:create_new_treatment_data, :treat_partial_update, :delete]
 
   def new

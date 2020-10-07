@@ -1,10 +1,10 @@
 <div class="side-task-header">
+  <div class="todays_treatments">本日の処置</div>
 </div>
 
 <div class="to_do_list">
     <ul class="list">
       <li class="list-name">
-        <p>【本日の処置】</p>
         <% @treatments.each do |treatment| %>
         <p>[<%= treatment.patient.name %>]</p>
         <p><%= treatment.time %></p>

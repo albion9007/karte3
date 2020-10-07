@@ -1,57 +1,52 @@
+<% if user_signed_in? %>
 <div class="patient-show">
   <div class="patient-box">
-    <h2 class="name">
-      <%= @patient.name %>  [<%= @patient.main_doctor %>]
-    </h2>
-    <div class='patient-img-content'>
-      <%= image_tag @patient.image ,class:"patient-box-img" %>
+      <div class="patient-edit">
+        <div class="patient-corner">
+          <h2 class="name">
+            <%= @patient.name %>  [<%= @patient.main_doctor %>]
+          </h2>
+          <div class='patient-img-content'>
+            <%= image_tag @patient.image ,class:"patient-box-img" %>
+          </div>
+          <div class="patient-disease-box">
+            <span class="patient-main-disease">
+                <%= @patient.main_disease %>
+            </span>
+            <span class="patient-sub-disease">
+              [既往歴]<%= @patient.sub_disease %>
+            </span>
+              <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
+          </div>
+        </div>
+        <div class="link-button">
+          <%= link_to '観察記録', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
+          <%= link_to '処置内容参照', patient_treatment_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
+          <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "btn btn-malformation btn-malformation--pastel" %>
+          <p class='or-text'>or</p>
+          <%= link_to '退院', patient_path, method: :delete, class:'btn btn-malformation btn-malformation--pastel' %>
+        </div>
+      </div>
+    <div class="comment-box">
+      <form>
+        <textarea class="comment-text"></textarea>
+        <p class="comment-warn">
+          申し送り:引継ぎ時に申し送りたい内容を入力して下さい。
+          <br>
+          内容は伝えたいポイントを明確にして、短く伝わりやすい表現で入力して下さい。
+        </p>
+        <button type="submit" class="comment-btn">
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <span>申し送る<span>
+        </button>
+      </form>
     </div>
-    <div class="patient-disease-box">
-      <span class="patient-main-disease">
-         <%= @patient.main_disease %>
-      </span>
-      <span class="patient-sub-disease">
-        [既往歴]<%= @patient.sub_disease %>
-      </span>
-    </div>
-
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-    <% if user_signed_in? %>
-    <%= link_to '観察記録', patient_observation_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
-    <%= link_to '処置内容参照', patient_treatment_path(@patient.id),class:"btn btn-malformation btn-malformation--pastel"%>
-    <%= link_to '患者様情報の編集', edit_patient_path, method: :get, class: "btn btn-malformation btn-malformation--pastel" %>
-    <p class='or-text'>or</p>
-    <%= link_to '退院', patient_path, method: :delete, class:'btn btn-malformation btn-malformation--pastel' %>
-    <% end %>
-    
     <div class="call">
-      <div class="dr-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>Dr.緊急呼び出し</span>
-      </div>
-      <div class="haras-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>ハラスメントの通報</span>
-      </div>
+        <%= link_to '⭐️Dr.緊急呼び出し', '#', class:'btn btn-malformation btn-malformation--pastel' %>
+        <%= link_to '❗️ハラスメントの通報', '#', class:'btn btn-malformation btn-malformation--pastel' %>
     </div>
-    <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
-  </div>
-  <%# /商品の概要 %>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        申し送り:引継ぎ時に申し送りたい内容を入力して下さい。
-        <br>
-        内容は伝えたいポイントを明確にして、短く伝わりやすい表現で入力して下さい。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>申し送る<span>
-      </button>
-    </form>
   </div>
   <div class="underlay-patient-show-photo"></div>
   <div class="underlay-black"></div>
 </div>
+<% end %>

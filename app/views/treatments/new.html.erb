@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="treatments-new">
   <div class="treatment_patient-box">
     <div class='patient-img-content'>
@@ -87,4 +88,5 @@
     <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
   </div>
 </div>
+<% end %>
 <%= javascript_pack_tag 'treatment/application' %>
