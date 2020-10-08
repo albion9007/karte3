@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.position == 'Doctor' %>
 <div class="treatments-new">
   <div class="treatment_patient-box">
     <div class='patient-img-content'>
@@ -21,7 +21,7 @@
       <tbody>
       <tr class="treatments-tr">
         <th class="treatments-th">処置時間
-        <button class="add-treat-time" data-patient_id="<%= @patient.id %>" >追加</button></th>
+        <button class="open-add-form">追加</button></th>
           <% @treatments.each do |treatment| %>
           <td class="treatment-td">
             <%= treatment.time %>
@@ -50,8 +50,8 @@
         <td class="treatment-td">
             <div class="hyouji"><%= treatment.medicine %></div>
             <select class="nyu-ryoku" data-col="medicine" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
-              <% options = {'': '', '食後/抗生剤': '食後/抗生剤', '発熱時/解熱剤': '発熱時/解熱剤',
-              '嘔気時/制吐剤': '嘔気時/制吐剤', '胃痛時/胃薬': '胃痛時/胃薬', '食後/咳止め': '食後/咳止め', '食後/去痰薬': '食後/去痰薬'} %>
+              <% options = {'': '', '抗生剤': '抗生剤', '解熱剤/鎮痛剤': '解熱剤/鎮痛剤',
+              '制吐剤': '制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬'} %>
               <% options.each do |key, label| %>
                 <option value="<%= key %>" <%= key.to_s == treatment.medicine ? 'selected' : ''%>><%= label %></option>
              <% end %>
@@ -65,8 +65,8 @@
         <td class="treatment-td">
             <div class="hyouji"><%= treatment.injection %></div>
             <select class="nyu-ryoku" data-col="injection" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
-              <% options = {'': '', '抗生剤': '抗生剤', '発熱時/解熱剤': '発熱時/解熱剤',
-              '嘔気時/制吐剤': '嘔気時/制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬', 'ネブライザー': 'ネブライザー' } %>
+              <% options = {'': '', '抗生剤': '抗生剤', '解熱剤': '解熱剤',
+              '制吐剤': '制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬', 'ネブライザー': 'ネブライザー' } %>
               <% options.each do |key, label| %>
                 <option value="<%= key %>" <%= key.to_s == treatment.injection ? 'selected' : ''%>><%= label %></option>
              <% end %>
@@ -84,8 +84,50 @@
     </table>
   </div>
   <div class="link">
-    <%= link_to '観察記録へ戻る', '#',class:"btn btn-malformation btn-malformation--pastel" %>
+    <%= link_to '観察記録', patient_observation_path(@patient.id, 0),class:"btn btn-malformation btn-malformation--pastel"%>
+    <%# <%= link_to '観察記録へ戻る', '#',class:"btn btn-malformation btn-malformation--pastel" %> %>
     <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
+  </div>
+</div>
+<div id="add-form">
+  <h3>追加する時間を入力して下さい。</h3>
+  <div>
+    <select id="time">
+      <option value="食後">食後</option>
+      <option value="食前">食前</option>
+      <option value="発熱・疼痛時">発熱時・疼痛時</option>
+      <option value="嘔気時">嘔気時</option>
+      <option value="便秘時">便秘時</option>
+      <option value="不眠時">不眠時</option>
+      <option value="00:00">00:00</option>
+      <option value="01:00">01:00</option>
+      <option value="02:00">02:00</option>
+      <option value="03:00">03:00</option>
+      <option value="04:00">04:00</option>
+      <option value="05:00">05:00</option>
+      <option value="06:00">06:00</option>
+      <option value="07:00">07:00</option>
+      <option value="08:00">08:00</option>
+      <option value="09:00">09:00</option>
+      <option value="10:00">10:00</option>
+      <option value="11:00">11:00</option>
+      <option value="12:00">12:00</option>
+      <option value="13:00">13:00</option>
+      <option value="14:00">14:00</option>
+      <option value="15:00">15:00</option>
+      <option value="16:00">16:00</option>
+      <option value="17:00">17:00</option>
+      <option value="18:00">18:00</option>
+      <option value="19:00">19:00</option>
+      <option value="20:00">20:00</option>
+      <option value="21:00">21:00</option>
+      <option value="22:00">22:00</option>
+      <option value="23:00">23:00</option>
+    </select>
+  </div>
+  <div>
+    <button class="add-treat-time" data-patient_id="<%= @patient.id %>" >追加</button></th>
+    <button class="close-add-form" >閉じる</button>
   </div>
 </div>
 <% end %>

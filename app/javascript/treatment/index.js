@@ -1,14 +1,14 @@
 $(function(){
   $('.nyu-ryoku').hide()
+  $('#add-form').hide()
+  $('.open-add-form').on('click', function () {
+    $('#add-form').show()
+  })
   $('.add-treat-time').on('click', function () {
-    const time = window.prompt("処置や検査時間を入力してください", "")
-    if (!time) {
-      return
-    }
     $.ajax(`/patients/${$(this).data('patient_id')}/treatments/create_new_treatment_data`, {
       type: 'put',
       data: {
-        time
+        time: $('#time').val()
       }
     }).done(function() {
       location.reload()
@@ -20,6 +20,9 @@ $(function(){
       }
     })
   });
+  $('.close-add-form').on('click', function() {
+    $('#add-form').hide()
+  }) 
   $('.delete-time').on('click', function () {
     $.ajax(`/patients/${$(this).data('patient_id')}/treatments/${$(this).data('id')}/delete`, {
       type: 'delete',

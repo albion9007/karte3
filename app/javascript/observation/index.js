@@ -2,27 +2,24 @@ $(function(){
    // この中の処理は、画面表示時に一度だけ実行される
   // nyu-ryokuクラスのものが非表示になる
   $('.nyu-ryoku').hide()
-  // add-timeクラスがクリックされたときの処理を付与する
-  $('.add-time').on('click', function () {
-    // //leftの値 = (ウィンドウ幅 -コンテンツ幅) ÷ 2
-    // var leftPosition = (($(window).width() - $("#sample-dialog").outerWidth(true)) / 2);
-    // //CSSを変更
-    // $("#sample-dialog").css({"left": leftPosition + "px"});
-    // //ダイアログを表示する
-    // $("#sample-dialog").show();
-    // return
-    // ダイアログを呼び出し、timeにデータを入力する。
-    const time = window.prompt("時間を入力してください", "")
-    if (!time) {
-      return
-    }
+  // add-time-form(id)のものが非表示になる
+  $('#add-time-form').hide()
+  // open-add-formクラスがクリックされたときの処理を付与する
+  $('.open-add-form').on('click', function () {
+    // add-time-formが表示される
+    $('#add-time-form').show()
+  })
+  // add-time-formの中のadd-observation-time(追加ボタン)をクリックされたときの処理を付与する
+  $('.add-observation-time').on('click', function () {
     // 新しいtimeの空のobservationのデータを作成し、各値を入力可能にする。
     $.ajax(`/patients/${$(this).data('patient_id')}/observations/create_empty_data`, {
       type: 'put',
-      // timeにはダイアログで入力した文字列が格納されているので、timeは空ではありません。
+      // timeには入力した文字列が格納されているので、timeは空ではありません。
       data: {
-        time,
+        // timeプロパティにid="time"に値が格納されたものを代入する？。
+        time: $('#time').val(),
         // 追加ボタンに設定されたdata-date="<%= @date %>">の値をコントローラに渡す
+        // dateプロパティに$(this).data('date')を代入する。this=add-observation-timeの事。dataメソッドでdata-date="<%= @date %>"の値を取得している。
         date: $(this).data('date')
       }
     }).done(function() {
@@ -40,6 +37,9 @@ $(function(){
       }
     })
   });
+  $('.close-add-form').on('click', function () {
+    $('#add-time-form').hide()
+  })
   // delete-timeをクリックするとメソッドが呼ばれる。
   $('.delete-time').on('click', function () {
     // erbで付与したidとpatient_idをdataに渡し、コントローラー側でdeleteの処理を行う。

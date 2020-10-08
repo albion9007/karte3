@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<%# <% if user_signed_in? %>
 <div class="observation-show">
   <div class="observation-box">
   <div class="vital-signs-name">体温の経過</div>
@@ -22,7 +22,7 @@
     <tr class="observation-tr">
       <th class="observation-th">観察時間  
       <%# add-timeクラスを付与してjsへ渡す。ajaxへデータを渡すために、data-patient_id=を設定する %>
-      <button class="add-time" data-patient_id="<%= @patient.id %>" data-date="<%= @date %>">追加</button></th>
+      <button class="open-add-form">追加</button></th>
           <% @observations.each do |observation| %>
           <td class="observation-td">
             <%= observation.time %>
@@ -234,7 +234,7 @@
     <div class="kensa-btn">
       <%= link_to "検査結果参照", '#' %>
     </div>
-    <% if user_signed_in? && current_user.position == @users_position_doctor %>
+    <% if user_signed_in? && current_user.position == 'Doctor' %>
     <div class="syoti-btn">
       <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
       <%= link_to "処置の入力", new_patient_treatment_path %>
@@ -246,55 +246,41 @@
   </div>
   </div>
 </div>
-<%# <div class="dialog" id="sample-dialog">
-  <div class="dialog-header">
-    <span class="dialog-title">サンプルダイアログ</span>
-    <button type="button" class="dialog-close">
-      閉じる☓
-    </button>
+<%# classはいくつあっても良いが、idの場合はこのhtml内に同じidが存在しない様にする。 %>
+<div id="add-time-form">
+  <h3>追加する時間を入力して下さい。</h3>
+  <div>
+    <select id="time">
+      <option value="00:00">00:00</option>
+      <option value="01:00">01:00</option>
+      <option value="02:00">02:00</option>
+      <option value="03:00">03:00</option>
+      <option value="04:00">04:00</option>
+      <option value="05:00">05:00</option>
+      <option value="06:00">06:00</option>
+      <option value="07:00">07:00</option>
+      <option value="08:00">08:00</option>
+      <option value="09:00">09:00</option>
+      <option value="10:00">10:00</option>
+      <option value="11:00">11:00</option>
+      <option value="12:00">12:00</option>
+      <option value="13:00">13:00</option>
+      <option value="14:00">14:00</option>
+      <option value="15:00">15:00</option>
+      <option value="16:00">16:00</option>
+      <option value="17:00">17:00</option>
+      <option value="18:00">18:00</option>
+      <option value="19:00">19:00</option>
+      <option value="20:00">20:00</option>
+      <option value="21:00">21:00</option>
+      <option value="22:00">22:00</option>
+      <option value="23:00">23:00</option>
+    </select>
   </div>
-  <div class="dialog-content">
-    <p>ダイアログです</p>
+  <div>
+    <button class="add-observation-time" data-date="<%= @date %>" data-patient_id="<%= @patient.id %>" >追加</button></th>
+    <button class="close-add-form" >閉じる</button>
   </div>
-</div> %>
-<%# <div id="add-form" title="時間を追加">
-  <table>
-    <tbody>
-      <tr>
-        <th>
-          時間
-        </th>
-        <td>
-          <select>
-            <option value="00:00">00:00</option>
-            <option value="01:00">01:00</option>
-            <option value="02:00">02:00</option>
-            <option value="03:00">03:00</option>
-            <option value="04:00"></option>
-            <option value="05:00"></option>
-            <option value="06:00"></option>
-            <option value="07:00"></option>
-            <option value="08:00"></option>
-            <option value="09:00"></option>
-            <option value="10:00"></option>
-            <option value="11:00"></option>
-            <option value="12:00"></option>
-            <option value="13:00"></option>
-            <option value="14:00"></option>
-            <option value="15:00"></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-          </select>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div> %>
+</div>
 <%= javascript_pack_tag 'observation/application'%>
-<% end %>
+<%# <% end %> 

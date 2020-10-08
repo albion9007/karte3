@@ -5,8 +5,15 @@
 <div class="to_do_list">
     <ul class="list">
       <li class="list-name">
+      <%# 前回表示した名前を保存するための変数 %>
+        <% name = "" %>
         <% @treatments.each do |treatment| %>
+        <%# 前回表示した名前と異なる場合は名前を表示する %>
+        <% if name != treatment.patient.name %>
         <p>[<%= treatment.patient.name %>]</p>
+        <% end %>
+        <%# 今回の名前を保存している %>
+        <% name = treatment.patient.name %>
         <p><%= treatment.time %></p>
         <p><%= treatment.test %></p>
         <p><%= treatment.medicine %></p>

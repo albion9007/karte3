@@ -53,7 +53,7 @@
   font-size: 3vh;
 }
 
-.add-treat-time {
+.add-treat-time, .open-add-form {
   color: rgb(246, 104, 9);
   font-size: 20px;
   font-weight: bold;
@@ -125,4 +125,29 @@ table.treatments-table td.treatment-td{
   display: flex;
   justify-content: space-around;
   margin: 7vh 0;
+}
+
+#add-form {
+  width: auto;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #aaa;
+  box-shadow: 2px 2px 4px #888;
+  top: 30%;
+  left: 50%;
+  position: fixed;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(232, 247, 250);
+  font-size: large;
+  border-radius: 20px;
+}
+
+.close-add-form {
+  color: rgb(146, 135, 184);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-color: rgb(146, 135, 184);
+  border-radius: 20px;
 }
