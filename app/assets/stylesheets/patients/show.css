@@ -15,10 +15,23 @@
   align-items: center;
 }
 
-.patient-box>.name {
+.patient-corner>.name {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+}
+
+.patient-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-button {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 100px;
 }
 
 .hyouji {
@@ -31,7 +44,6 @@
   width: 60vw;
   min-height: 500px;
   object-fit: contain;
-  border-radius: 20px;
 }
 
 .patient-disease-box {
@@ -67,52 +79,18 @@
 
 .call {
   display: flex;
-  justify-content:  space-around;
-  position: relative;
+  justify-content:  space-between;
+  width: 80vw;
+  /* position: relative; */
 }
 
-.dr-btn {
-  border-radius: 40px;
-  width: 30vw;
-  height: 10vh;
-  font-size: 30px;
-  min-width: 200px;
-  color: rgb(26, 2, 24);
-  border: 5px solid #eb208c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
-.haras-btn {
-  border-radius: 40px;
-  width: 30vw;
-  min-width: 200px;
-  font-size: 30px;
-  padding: 1vh 0;
-  color: black;
-  border: 5px solid #0c08ce;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
-}
-
-/* /商品の概要 */
 
 .comment-box {
   width: 40vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
+  border-radius: 40px;
 }
 
 .comment-text {
@@ -121,6 +99,7 @@
   padding: 10px;
   border: solid 2px #dedede;
   resize: none;
+  border-radius: 40px;
 }
 
 .comment-warn {

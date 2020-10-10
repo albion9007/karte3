@@ -5,6 +5,17 @@
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
+    <div class='patient-errors-message'>
+      <% if @patient.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <ul>
+            <% @patient.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
       <div class='input-field'>
       <p class="sentence">
           クリックして患者様の画像ファイルをアップロードして下さい

@@ -1,36 +1,143 @@
-<div class="observation-new">
-  <div class="item-box">
-    <%= form_with  model: [@patient,@treatment], local: true do |f| %>
-    <table class="detail-table">
+<%# <% if user_signed_in? && current_user.position == 'Doctor' %>
+<div class="treatments-new">
+  <div class="treatment_patient-box">
+    <div class='patient-img-content'>
+      <%= image_tag @patient.image ,class:"treatment_patient-box-img" %>
+    </div>
+    <div class="treatment_patient-disease-box">
+      <div class="name">
+      患者様名:  <%= @patient.name %>
+      </div>
+      <span class="treatment_patient-main-disease">
+      主病名:  <%= @patient.main_disease %>
+      </span>
+      <span class="treatment_patient-sub-disease">
+      [既往歴]  <%= @patient.sub_disease %>
+      </span>
+    </div>
+   </div>
+  <div class="treatments-box">
+  <div class=how-to-input>
+    <ul>入力方法
+      <li>⭐️注意⭐️ 指示は医師のみ行う事ができるものです。看護師の場合は処置参照で指示内容を確認しましょう。</li>
+      <li>①指示したい時間を追加ボタンから入力します。</li>
+      <li>②指示時間の列内の空欄部分をクリックすると、フォームが出て来ます。</li>
+      <li>③フォーム内に必要項目を選択後にEnterキーを押すとデータが保存されます。</li>
+      <li>④指示を変更したい場合は、データ部分を再度クリックして編集し直す事が出来ます。</li>
+      <li>⑤指示時間内の全てを削除する場合は、削除ボタンをクリックすると消えます。</li>
+    </ul>
+  </div>
+    <table class="treatments-table">
       <tbody>
-      <tr>
-        <th>処置時間</th>
-        <td><%= f.text_field :time, maxlength: "5" %></td>
+      <tr class="treatments-tr">
+        <th class="treatments-th">処置時間
+        <button class="open-add-form">追加</button></th>
+          <% @treatments.each do |treatment| %>
+          <td class="treatment-td">
+            <%= treatment.time %>
+            <button class="delete-time" data-id="<%= treatment.id %>" data-patient_id="<%= @patient.id %>">削除</button>
+          </td>
+          <% end %>
       </tr>
-      <tr>
-        <th>検査</th>
-        <td><%= f.select :test, {'': '', '採血': '採血', '検尿': '検尿',
-        '採痰': '採痰', '胸部レントゲン': '胸部レントゲン', '胸部CT': '胸部CT',
-        '肺生検': '肺生検', '呼吸機能検査': '呼吸機能検査' } %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">検査/退院</th>
+      <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.test %></div>
+            <select class="nyu-ryoku" data-col="test" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '胸部レントゲン': '胸部レントゲン', '胸部CT': '胸部CT',
+              '採血': '採血', '検尿': '検尿', 'MRI': 'MRI', 'PET-CT': 'PET-CT', '退院': '退院'} %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.test ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>飲み薬</th>
-        <td>
-        <%= f.text_field :medicine, maxlength: "15" %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">飲み薬</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.medicine %></div>
+            <select class="nyu-ryoku" data-col="medicine" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '抗生剤': '抗生剤', '解熱剤/鎮痛剤': '解熱剤/鎮痛剤',
+              '制吐剤': '制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬'} %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.medicine ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>注射</th>
-        <td>
-        <%= f.text_field :injection, maxlength: "15" %>
+      <tr class="treatments-tr">
+        <th class="treatments-th">注射/吸入薬</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <div class="hyouji"><%= treatment.injection %></div>
+            <select class="nyu-ryoku" data-col="injection" data-id="<%= treatment.id %>" data-patient_id="<%= treatment.patient_id %>">
+              <% options = {'': '', '抗生剤': '抗生剤', '解熱剤': '解熱剤',
+              '制吐剤': '制吐剤', '胃薬': '胃薬', '咳止め': '咳止め', '去痰薬': '去痰薬', 'ネブライザー': 'ネブライザー' } %>
+              <% options.each do |key, label| %>
+                <option value="<%= key %>" <%= key.to_s == treatment.injection ? 'selected' : ''%>><%= label %></option>
+             <% end %>
+            </select>
         </td>
+        <% end %>
       </tr>
-      <tr>
-        <th>指示を出す</th>
-        <td><%= f.submit '保存', class: 'btn btn-primary btn-block' %></td>
+      <tr class="treatments-tr">
+        <th class="treatments-th">Dr.Name</th>
+        <% @treatments.map(&:user_name).each do |user_name| %>
+          <td class="treatment-td"><%= user_name %></td>
+        <% end %>
       </tr>
       </tbody>
     </table>
-    <% end %>
+  </div>
+  <div class="link">
+    <%= link_to '観察記録画面へ戻る', patient_observation_path(@patient.id, 0),class:"btn btn-malformation btn-malformation--pastel"%>
+    <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
+  </div>
 </div>
+<div id="add-form">
+  <h3>追加する時間を入力して下さい。</h3>
+  <div>
+    <select id="time">
+      <option value="食後">食後</option>
+      <option value="食前">食前</option>
+      <option value="発熱・疼痛時">発熱時・疼痛時</option>
+      <option value="嘔気時">嘔気時</option>
+      <option value="便秘時">便秘時</option>
+      <option value="不眠時">不眠時</option>
+      <option value="00:00">00:00</option>
+      <option value="01:00">01:00</option>
+      <option value="02:00">02:00</option>
+      <option value="03:00">03:00</option>
+      <option value="04:00">04:00</option>
+      <option value="05:00">05:00</option>
+      <option value="06:00">06:00</option>
+      <option value="07:00">07:00</option>
+      <option value="08:00">08:00</option>
+      <option value="09:00">09:00</option>
+      <option value="10:00">10:00</option>
+      <option value="11:00">11:00</option>
+      <option value="12:00">12:00</option>
+      <option value="13:00">13:00</option>
+      <option value="14:00">14:00</option>
+      <option value="15:00">15:00</option>
+      <option value="16:00">16:00</option>
+      <option value="17:00">17:00</option>
+      <option value="18:00">18:00</option>
+      <option value="19:00">19:00</option>
+      <option value="20:00">20:00</option>
+      <option value="21:00">21:00</option>
+      <option value="22:00">22:00</option>
+      <option value="23:00">23:00</option>
+    </select>
+  </div>
+  <div>
+    <button class="add-treat-time" data-patient_id="<%= @patient.id %>" >追加</button></th>
+    <button class="close-add-form" >閉じる</button>
+  </div>
+</div>
+<%= javascript_pack_tag 'treatment/application' %>
+<%# <% end %>

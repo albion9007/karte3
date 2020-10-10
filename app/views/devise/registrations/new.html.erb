@@ -7,9 +7,10 @@
       </span>
     </p>
     <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
-      <%= devise_error_messages!%>
+      <%= devise_error_messages! %>
       <div class='input-field'>
         <%= f.text_field :name, class:"login-username", autofocus: true, placeholder:"Name" %>
+        <%= f.select :position, {'Select Position':'', 'Doctor': 'Doctor', 'Nurse': 'Nurse' }, {}, {class:"login-password", id:"user-position"} %>
         <%= f.email_field :email, class:"login-username", autofocus: true, placeholder:"Email" %>
         <%= f.password_field :password, class:"login-password", autocomplete: "off",  placeholder:"Password 英数字6文字以上" %>
         <%= f.password_field :password_confirmation, class:"login-password", autocomplete: "off",  placeholder:"Password Confirmation" %>

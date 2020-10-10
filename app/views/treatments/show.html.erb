@@ -1,0 +1,69 @@
+<%# <% if user_signed_in? %>
+<div class="treatments-new">
+  <div class="treatment_patient-box">
+    <div class='patient-img-content'>
+      <%= image_tag @patient.image ,class:"treatment_patient-box-img" %>
+    </div>
+    <div class="treatment_patient-disease-box">
+      <div class="name">
+      患者様名:  <%= @patient.name %>
+      </div>
+      <span class="treatment_patient-main-disease">
+      主病名:  <%= @patient.main_disease %>
+      </span>
+      <span class="treatment_patient-sub-disease">
+      [既往歴]  <%= @patient.sub_disease %>
+      </span>
+    </div>
+   </div>
+  <div class="treatments-box">
+    <table class="treatments-table">
+      <tbody>
+      <tr class="treatments-tr">
+        <th class="treatments-th">処置時間
+          <% @treatments.each do |treatment| %>
+          <td class="treatment-td">
+            <%= treatment.time %>
+          </td>
+          <% end %>
+      </tr>
+      <tr class="treatments-tr">
+        <th class="treatments-th">検査/退院</th>
+          <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <%= treatment.test %>
+        </td>
+        <% end %>
+      </tr>
+      <tr class="treatments-tr">
+        <th class="treatments-th">飲み薬</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <%= treatment.medicine %>
+        </td>
+        <% end %>
+      </tr>
+      <tr class="treatments-tr">
+        <th class="treatments-th">注射/吸入薬</th>
+        <% @treatments.each do |treatment| %>
+        <td class="treatment-td">
+            <%= treatment.injection %>
+        </td>
+        <% end %>
+      </tr>
+      <tr class="treatments-tr">
+        <th class="treatments-th">Dr.Name</th>
+        <% @treatments.map(&:user_name).each do |user_name| %>
+          <td class="treatment-td"><%= user_name %></td>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="link">
+    <%= link_to '観察記録へ戻る', '#',class:"btn btn-malformation btn-malformation--pastel" %>
+    <%= link_to '病棟画面へ戻る', root_path, class: "btn btn-malformation btn-malformation--pastel" %>
+  </div>
+</div>
+<%= javascript_pack_tag 'treatment/application' %>
+<%# <% end %>

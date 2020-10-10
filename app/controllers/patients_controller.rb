@@ -7,6 +7,7 @@ class PatientsController < ApplicationController
   def index
     @patients_man = Patient.where(gender: '男性').all.order('created_at DESC')
     @patients_woman = Patient.where(gender: '女性').all.order('created_at DESC')
+    @treatments = Treatment.includes(:patient).all.order('patient_id, time')
   end
 
   def create
@@ -41,4 +42,5 @@ class PatientsController < ApplicationController
   def set_patient
     @patient = Patient.find(params[:id])
   end
+
 end

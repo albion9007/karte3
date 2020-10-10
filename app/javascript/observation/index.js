@@ -2,20 +2,24 @@ $(function(){
    // この中の処理は、画面表示時に一度だけ実行される
   // nyu-ryokuクラスのものが非表示になる
   $('.nyu-ryoku').hide()
-  // add-timeクラスがクリックされたときの処理を付与する
-  $('.add-time').on('click', function () {
-    // ダイアログを呼び出し、timeにデータを入力する。
-    const time = window.prompt("時間を入力してください", "")
-    if (!time) {
-      return
-    }
+  // add-time-form(id)のものが非表示になる
+  $('#add-time-form').hide()
+  // open-add-formクラスがクリックされたときの処理を付与する
+  $('.open-add-form').on('click', function () {
+    // add-time-formが表示される
+    $('#add-time-form').show()
+  })
+  // add-time-formの中のadd-observation-time(追加ボタン)をクリックされたときの処理を付与する
+  $('.add-observation-time').on('click', function () {
     // 新しいtimeの空のobservationのデータを作成し、各値を入力可能にする。
     $.ajax(`/patients/${$(this).data('patient_id')}/observations/create_empty_data`, {
       type: 'put',
-      // timeにはダイアログで入力した文字列が格納されているので、timeは空ではありません。
+      // timeには入力した文字列が格納されているので、timeは空ではありません。
       data: {
-        time,
+        // timeプロパティにid="time"に値が格納されたものを代入する？。
+        time: $('#time').val(),
         // 追加ボタンに設定されたdata-date="<%= @date %>">の値をコントローラに渡す
+        // dateプロパティに$(this).data('date')を代入する。this=add-observation-timeの事。dataメソッドでdata-date="<%= @date %>"の値を取得している。
         date: $(this).data('date')
       }
     }).done(function() {
@@ -33,6 +37,9 @@ $(function(){
       }
     })
   });
+  $('.close-add-form').on('click', function () {
+    $('#add-time-form').hide()
+  })
   // delete-timeをクリックするとメソッドが呼ばれる。
   $('.delete-time').on('click', function () {
     // erbで付与したidとpatient_idをdataに渡し、コントローラー側でdeleteの処理を行う。
@@ -52,6 +59,14 @@ $(function(){
     $(this).hide()
     // つまり、$(this).siblings('.nyu-ryoku').show()と、$(this).hide()が同時に行われている。
   });
+  // nyu-ryokuクラスのフォームでキー操作を行った場合の処理。
+  $('.nyu-ryoku').on('keypress', function (e) {
+    // 押したキーがEnterキーの場合
+    if (e.key == 'Enter') {
+      // focusoutを強制的に発生させる。→70行目の処理を実行させる。
+      $(this).trigger('focusout')
+    }
+  })
   $('.nyu-ryoku')
     .on('focusout', function () {
     const col = $(this).data('col')
@@ -65,7 +80,7 @@ $(function(){
       data: {
         // col=どのカラムを更新するかを指定している
         col,
-        // value=更新する値をを指定している
+        // value=更新する値を指定している
         value: $(this).val()
       }
       // ajaxの処理に成功したらdoneの処理がされる
@@ -94,4 +109,13 @@ $(function(){
     // date.getMonth() + 1は1月が0月になるので、+1している。（月だけで、日はOK）。
     return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
   }
+  // $("#add-form").dialog({
+  //   autoOpen: false,
+  //   modal: true,
+  //   buttons: {
+  //     "OK": function() {
+  //       $(this).dialog("close")
+  //     }
+  //   }
+  // })
 })

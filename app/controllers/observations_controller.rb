@@ -81,6 +81,7 @@ class ObservationsController < ApplicationController
 
   # ajaxから呼び出されるためのアクションを設定する
   def partial_update
+    logger.info "aaa"
     # dataを初期化
     data = []
     # ajaxで指定されたカラムを更新する
