@@ -17,6 +17,16 @@
   <%# 翌日のボタン作成、今の日付を渡すため、data-dateを渡す。 %>
     <button class="nextday" data-date="<%= @date %>">翌日</button>
   </div>
+  <div class=how-to-input>
+    <ul>入力方法
+      <li>①観察した時間を追加ボタンから入力します。</li>
+      <li>②観察時間の列内の観察項目の空欄部分をクリックすると、フォームが出て来ます。</li>
+      <li>③フォーム内に必要項目を選択、または入力後にEnterキーを押すとデータが保存されます。</li>
+      <li>④データを変更したい場合は、データ部分を再度クリックして編集し直す事が出来ます。</li>
+      <li>⑤観察時間内の観察項目全てを削除する場合は、削除ボタンをクリックすると消えます。</li>
+      <li>⑥グラフに反映されるものは体温・脈拍・呼吸・血圧のみです。</li>
+    </ul>
+  </div>
   <table class="observation-show-table">
     <tbody>
     <tr class="observation-tr">
@@ -231,15 +241,12 @@
     </tbody>
   </table>
   <div class="observation-show-btn">
-    <div class="kensa-btn">
-      <%= link_to "検査結果参照", '#' %>
-    </div>
-    <% if user_signed_in? && current_user.position == 'Doctor' %>
+    <%# <% if user_signed_in? && current_user.position == 'Doctor' %>
     <div class="syoti-btn">
       <%= image_tag "点滴.jpeg" ,class:"treatment-icon" ,width:"40",height:"40"%>
       <%= link_to "処置の入力", new_patient_treatment_path %>
     </div>
-    <% end %>
+    <%# <% end %>
     <div class="syoti-btn">
       <%= link_to "患者様ページへ戻る", patient_path(@patient.id) %>
     </div>

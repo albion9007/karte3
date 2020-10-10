@@ -8,8 +8,6 @@ class PatientsController < ApplicationController
     @patients_man = Patient.where(gender: '男性').all.order('created_at DESC')
     @patients_woman = Patient.where(gender: '女性').all.order('created_at DESC')
     @treatments = Treatment.includes(:patient).all.order('patient_id, time')
-    # treatments = reatments.where(patient_id: params[:patient_id], date: @date).to_a
-    # @treatments = treatments.sort_by { |o| o.time.delete(':').to_i }
   end
 
   def create

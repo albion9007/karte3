@@ -35,6 +35,11 @@ $(function(){
     $(this).siblings('.nyu-ryoku').trigger('focus')
     $(this).hide()
   });
+  $('.nyu-ryoku').on('keypress', function (e) {
+    if (e.key == 'Enter') {
+      $(this).trigger('focusout')
+    }
+  })
   $('.nyu-ryoku')
   .on('focusout', function () {
     const col = $(this).data('col')

@@ -59,6 +59,14 @@ $(function(){
     $(this).hide()
     // つまり、$(this).siblings('.nyu-ryoku').show()と、$(this).hide()が同時に行われている。
   });
+  // nyu-ryokuクラスのフォームでキー操作を行った場合の処理。
+  $('.nyu-ryoku').on('keypress', function (e) {
+    // 押したキーがEnterキーの場合
+    if (e.key == 'Enter') {
+      // focusoutを強制的に発生させる。→70行目の処理を実行させる。
+      $(this).trigger('focusout')
+    }
+  })
   $('.nyu-ryoku')
     .on('focusout', function () {
     const col = $(this).data('col')

@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<%# <% if user_signed_in? %>
 <div class="patient-show">
   <div class="patient-box">
       <div class="patient-edit">
@@ -27,26 +27,26 @@
           <%= link_to '退院', patient_path, method: :delete, class:'btn btn-malformation btn-malformation--pastel' %>
         </div>
       </div>
-    <div class="comment-box">
-      <form>
-        <textarea class="comment-text"></textarea>
-        <p class="comment-warn">
-          申し送り:引継ぎ時に申し送りたい内容を入力して下さい。
-          <br>
+    <%# <div class="comment-box"> %>
+      <%# <form> %>
+        <%# <textarea class="comment-text"></textarea> %>
+        <%# <p class="comment-warn"> %>
+          <%# 申し送り:引継ぎ時に申し送りたい内容を入力して下さい。 %>
+          <%# <br>
           内容は伝えたいポイントを明確にして、短く伝わりやすい表現で入力して下さい。
         </p>
-        <button type="submit" class="comment-btn">
-          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-          <span>申し送る<span>
+        <button type="submit" class="comment-btn"> %>
+          <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <%# <span>申し送る<span>
         </button>
       </form>
-    </div>
-    <div class="call">
-        <%= link_to '⭐️Dr.緊急呼び出し', '#', class:'btn btn-malformation btn-malformation--pastel' %>
-        <%= link_to '❗️ハラスメントの通報', '#', class:'btn btn-malformation btn-malformation--pastel' %>
-    </div>
+    </div> %>
+    <%# <div class="call"> %>
+        <%# <%= link_to '⭐️Dr.緊急呼び出し', '#', class:'btn btn-malformation btn-malformation--pastel' %>
+        <%# <%= link_to '❗️ハラスメントの通報', '#', class:'btn btn-malformation btn-malformation--pastel' %>
+    <%# </div> %>
   </div>
   <div class="underlay-patient-show-photo"></div>
   <div class="underlay-black"></div>
 </div>
-<% end %>
+<%# <% end %>

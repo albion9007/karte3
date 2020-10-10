@@ -3,7 +3,7 @@ class Observation < ApplicationRecord
   belongs_to :patient, optional: true
   # バリデーションをカスタマイズする。このバリデーションは1日の中での最大数のチェック。
   validate :max_times_in_one_day
-  validate :exists_time
+  validate :exists_time, on: :create
 
   # 定数を定義しておく。（24と言う数字に対して意味をつけ分かりやすくする。
   MAX_TIMES_IN_ONE_DAY = 24

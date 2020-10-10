@@ -3,6 +3,7 @@ class Patient < ApplicationRecord
   has_many :users, through: :patient_users
   # has_many :treatments
   has_many :observations, dependent: :destroy
+  has_many :treatments, dependent: :destroy
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -14,9 +15,9 @@ class Patient < ApplicationRecord
 
   def limit_patient_register_count
     if self.gender == "男性" && Patient.where(gender: "男性").count >= REGISTER_LIMIT_COUNT
-        errors.add(:patient, "male count is over") # エラーを追加
+        errors.add(:patient, "男性部屋は4人までです。誰か退院しないと入院は出来ません。") # エラーを追加
     elsif self.gender == "女性" && Patient.where(gender: "女性").count >= REGISTER_LIMIT_COUNT
-        errors.add(:patient, "female count is over")
+        errors.add(:patient, "男性部屋は4人までです。誰か退院しないと入院は出来ません。")
     end
   end
 

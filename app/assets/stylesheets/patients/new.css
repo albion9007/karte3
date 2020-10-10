@@ -193,3 +193,10 @@
   text-decoration: none;
   font-size: 17px;
 }
+
+.patient-errors-message {
+  font-size: large;
+  font-weight: bold;
+  color: #fff;
+  margin: auto;
+}

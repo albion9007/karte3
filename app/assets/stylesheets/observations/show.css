@@ -53,6 +53,12 @@
   border-radius: 20px;
 }
 
+.how-to-input {
+  font-size: large;
+  font-weight: 700;
+  color: ;
+}
+
 .add-time {
   color: rgb(246, 104, 9);
   font-size: 20px;
