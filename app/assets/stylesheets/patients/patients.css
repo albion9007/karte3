@@ -127,7 +127,6 @@ table.patients-man-table th.patients-man-th{
   color: rgb(250, 250, 250);background: -moz-linear-gradient(#38a9e285, #1310afb6);
   background: -webkit-linear-gradient(#38a9e285, #1310afb6);
   background: linear-gradient(to right, #38a9e285, #1310afb6);
-  /* color: white; */
   text-align: center;
   padding: 10px 0;
 }
@@ -177,7 +176,6 @@ table.patients-woman-table th.patients-woman-th{
   color: rgb(250, 250, 250);background: -moz-linear-gradient(#fa7ef085, #c300c3c9);
   background: -webkit-linear-gradient(#fa7ef085, #c300c3c9);
   background: linear-gradient(to right, #fa7ef085, #c300c3c9);
-  /* color: white; */
   text-align: center;
   padding: 10px 0;
 }
