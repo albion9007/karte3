@@ -27,6 +27,9 @@ class ObservationsController < ApplicationController
       # maximumでpatientのobservationの中で最新のdateを取得する。最初に表示した時に最も新しいデータが表示される。
       @date = Observation.maximum(:date)
     end
+    if @date.nil?
+      @date = Date.today
+    end
     # date: @dateで日付を指定してobservationsデータを取得する。
     observations = Observation.where(patient_id: params[:patient_id], date: @date).to_a
     @observations = observations.sort_by { |o| o.time.delete(':').to_i }
