@@ -187,6 +187,7 @@ table.observation-show-table td.observation-td{
   background-color: rgb(232, 247, 250);
   font-size: large;
   border-radius: 20px;
+  display: none;
 }
 
 .add-observation-time, .open-add-form {
