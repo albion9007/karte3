@@ -109,13 +109,4 @@ $(function(){
     // date.getMonth() + 1は1月が0月になるので、+1している。（月だけで、日はOK）。
     return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
   }
-  // $("#add-form").dialog({
-  //   autoOpen: false,
-  //   modal: true,
-  //   buttons: {
-  //     "OK": function() {
-  //       $(this).dialog("close")
-  //     }
-  //   }
-  // })
 })

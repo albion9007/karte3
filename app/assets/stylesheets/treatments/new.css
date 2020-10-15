@@ -141,6 +141,7 @@ table.treatments-table td.treatment-td{
   background-color: rgb(232, 247, 250);
   font-size: large;
   border-radius: 20px;
+  display: none;
 }
 
 .close-add-form {
